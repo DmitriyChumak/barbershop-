@@ -1,0 +1,29 @@
+# sphinx build directories
+_build/
+
+# dotfiles
+.*
+!.gitignore
+!.github
+!.mailmap
+# compiled python files
+*.py[co]
+__pycache__/
+# setup.py egg_info
+*.egg-info
+# emacs backup files
+*~
+# hg stuff
+*.orig
+status
+
+/mydemo/
+/hr_hospital/
+/school_lesson_6_1/
+/school_lesson_6_2/
+/school_lesson_6_3/
+/school_lesson_6_4/
+/school_lesson_6_5/
+
+hr_hospital/readme.txt
+
