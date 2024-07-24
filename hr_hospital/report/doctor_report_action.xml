@@ -1,0 +1,11 @@
+<odoo>
+    <record id="action_report_doctor" model="ir.actions.report">
+        <field name="name">Doctor Report</field>
+        <field name="model">hr_hospital.doctor</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hr_hospital.report_doctor</field>
+        <field name="report_file">hr_hospital.report_doctor</field>
+        <field name="print_report_name">'Doctor Report - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="hr_hospital.model_hr_hospital_doctor"/>
+    </record>
+</odoo>

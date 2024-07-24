@@ -1,0 +1,26 @@
+<!--
+    Master data for library.book.category model.
+    This data includes predefined book categories that will be available
+    in the system by default and will not be updated during module updates.
+
+    The noupdate="1" attribute ensures that these records are not modified during module updates.
+-->
+<odoo noupdate="1">
+    <!-- Record for Fiction category -->
+    <record id="category_fiction" model="library.book.category">
+        <field name="name">Fiction</field>
+        <field name="description">Fiction books</field>
+    </record>
+
+    <!-- Record for Non-Fiction category -->
+    <record id="category_non_fiction" model="library.book.category">
+        <field name="name">Non-Fiction</field>
+        <field name="description">Non-Fiction books</field>
+    </record>
+
+    <!-- Record for Classics category -->
+    <record id="category_classics" model="library.book.category">
+        <field name="name">Classics</field>
+        <field name="description">Classical literature</field>
+    </record>
+</odoo>

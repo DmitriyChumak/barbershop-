@@ -1,0 +1,337 @@
+<odoo>
+    <!-- Основные категории заболеваний -->
+    <record id="disease_cardiology" model="hr_hospital.disease">
+        <field name="name">Cardiology</field>
+        <field name="code">CARD</field>
+        <field name="description">Diseases related to the heart and blood vessels.</field>
+    </record>
+
+    <record id="disease_infectious_disease" model="hr_hospital.disease">
+        <field name="name">Infectious Disease</field>
+        <field name="code">INF</field>
+        <field name="description">Diseases caused by infectious agents.</field>
+    </record>
+
+    <record id="disease_pediatrics" model="hr_hospital.disease">
+        <field name="name">Pediatrics</field>
+        <field name="code">PED</field>
+        <field name="description">Diseases affecting children.</field>
+    </record>
+
+    <record id="disease_neurology" model="hr_hospital.disease">
+        <field name="name">Neurology</field>
+        <field name="code">NEURO</field>
+        <field name="description">Diseases of the nervous system.</field>
+    </record>
+
+    <record id="disease_oncology" model="hr_hospital.disease">
+        <field name="name">Oncology</field>
+        <field name="code">ONCO</field>
+        <field name="description">Cancers and related diseases.</field>
+    </record>
+
+    <record id="disease_orthopedics" model="hr_hospital.disease">
+        <field name="name">Orthopedics</field>
+        <field name="code">ORTHO</field>
+        <field name="description">Diseases of the musculoskeletal system.</field>
+    </record>
+
+    <!-- Подкатегории для кардиологии -->
+    <record id="disease_cardiology_heart_attack" model="hr_hospital.disease">
+        <field name="name">Heart Attack</field>
+        <field name="code">HA</field>
+        <field name="description">A condition in which blood flow to the heart is blocked.</field>
+        <field name="parent_id" ref="disease_cardiology"/>
+    </record>
+
+    <record id="disease_cardiology_arrhythmia" model="hr_hospital.disease">
+        <field name="name">Arrhythmia</field>
+        <field name="code">ARR</field>
+        <field name="description">Irregular heartbeats.</field>
+        <field name="parent_id" ref="disease_cardiology"/>
+    </record>
+
+    <record id="disease_cardiology_hypertension" model="hr_hospital.disease">
+        <field name="name">Hypertension</field>
+        <field name="code">HTN</field>
+        <field name="description">High blood pressure.</field>
+        <field name="parent_id" ref="disease_cardiology"/>
+    </record>
+
+    <record id="disease_cardiology_cardiomyopathy" model="hr_hospital.disease">
+        <field name="name">Cardiomyopathy</field>
+        <field name="code">CMP</field>
+        <field name="description">Disease of the heart muscle.</field>
+        <field name="parent_id" ref="disease_cardiology"/>
+    </record>
+
+
+    <record id="disease_infectious_covid19" model="hr_hospital.disease">
+        <field name="name">COVID-19</field>
+        <field name="code">COVID19</field>
+        <field name="description">Respiratory illness caused by the coronavirus.</field>
+        <field name="parent_id" ref="disease_infectious_disease"/>
+    </record>
+
+    <record id="disease_infectious_influenza" model="hr_hospital.disease">
+        <field name="name">Influenza</field>
+        <field name="code">FLU</field>
+        <field name="description">A viral infection that attacks the respiratory system.</field>
+        <field name="parent_id" ref="disease_infectious_disease"/>
+    </record>
+
+    <record id="disease_infectious_hiv" model="hr_hospital.disease">
+        <field name="name">HIV/AIDS</field>
+        <field name="code">HIV</field>
+        <field name="description">Human immunodeficiency virus infection and acquired immune deficiency syndrome.</field>
+        <field name="parent_id" ref="disease_infectious_disease"/>
+    </record>
+
+    <record id="disease_infectious_tuberculosis" model="hr_hospital.disease">
+        <field name="name">Tuberculosis</field>
+        <field name="code">TB</field>
+        <field name="description">A bacterial infection that affects the lungs.</field>
+        <field name="parent_id" ref="disease_infectious_disease"/>
+    </record>
+
+    <record id="disease_infectious_malaria" model="hr_hospital.disease">
+        <field name="name">Malaria</field>
+        <field name="code">MAL</field>
+        <field name="description">A disease caused by a plasmodium parasite, transmitted by the bite of infected mosquitoes.</field>
+        <field name="parent_id" ref="disease_infectious_disease"/>
+    </record>
+
+
+    <record id="disease_pediatrics_measles" model="hr_hospital.disease">
+        <field name="name">Measles</field>
+        <field name="code">MEAS</field>
+        <field name="description">A highly contagious viral disease.</field>
+        <field name="parent_id" ref="disease_pediatrics"/>
+    </record>
+
+    <record id="disease_pediatrics_chickenpox" model="hr_hospital.disease">
+        <field name="name">Chickenpox</field>
+        <field name="code">CPX</field>
+        <field name="description">A common childhood disease that causes an itchy rash.</field>
+        <field name="parent_id" ref="disease_pediatrics"/>
+    </record>
+
+    <record id="disease_pediatrics_mumps" model="hr_hospital.disease">
+        <field name="name">Mumps</field>
+        <field name="code">MUMPS</field>
+        <field name="description">A viral infection that affects the salivary glands.</field>
+        <field name="parent_id" ref="disease_pediatrics"/>
+    </record>
+
+    <record id="disease_pediatrics_whooping_cough" model="hr_hospital.disease">
+        <field name="name">Whooping Cough</field>
+        <field name="code">WC</field>
+        <field name="description">A highly contagious respiratory tract infection.</field>
+        <field name="parent_id" ref="disease_pediatrics"/>
+    </record>
+
+
+    <record id="disease_neurology_alzheimers" model="hr_hospital.disease">
+        <field name="name">Alzheimer's Disease</field>
+        <field name="code">ALZ</field>
+        <field name="description">A progressive disease that destroys memory and other important mental functions.</field>
+        <field name="parent_id" ref="disease_neurology"/>
+    </record>
+
+    <record id="disease_neurology_parkinsons" model="hr_hospital.disease">
+        <field name="name">Parkinson's Disease</field>
+        <field name="code">PD</field>
+        <field name="description">A disorder of the central nervous system that affects movement, often including tremors.</field>
+        <field name="parent_id" ref="disease_neurology"/>
+    </record>
+
+    <record id="disease_neurology_epilepsy" model="hr_hospital.disease">
+        <field name="name">Epilepsy</field>
+        <field name="code">EPI</field>
+        <field name="description">A disorder in which nerve cell activity in the brain is disturbed, causing seizures.</field>
+        <field name="parent_id" ref="disease_neurology"/>
+    </record>
+
+    <record id="disease_neurology_migraines" model="hr_hospital.disease">
+        <field name="name">Migraines</field>
+        <field name="code">MIG</field>
+        <field name="description">Severe headaches often accompanied by nausea and sensitivity to light and sound.</field>
+        <field name="parent_id" ref="disease_neurology"/>
+    </record>
+
+
+    <record id="disease_oncology_breast_cancer" model="hr_hospital.disease">
+        <field name="name">Breast Cancer</field>
+        <field name="code">BC</field>
+        <field name="description">A cancer that forms in the cells of the breasts.</field>
+        <field name="parent_id" ref="disease_oncology"/>
+    </record>
+
+    <record id="disease_oncology_lung_cancer" model="hr_hospital.disease">
+        <field name="name">Lung Cancer</field>
+        <field name="code">LC</field>
+        <field name="description">A cancer that begins in the lungs and most often occurs in people who smoke.</field>
+        <field name="parent_id" ref="disease_oncology"/>
+    </record>
+
+    <record id="disease_oncology_prostate_cancer" model="hr_hospital.disease">
+        <field name="name">Prostate Cancer</field>
+        <field name="code">PC</field>
+        <field name="description">A cancer in a man's prostate, a small walnut-sized gland that produces seminal fluid.</field>
+        <field name="parent_id" ref="disease_oncology"/>
+    </record>
+
+    <record id="disease_oncology_skin_cancer" model="hr_hospital.disease">
+        <field name="name">Skin Cancer</field>
+        <field name="code">SC</field>
+        <field name="description">A cancer that forms in the skin cells.</field>
+        <field name="parent_id" ref="disease_oncology"/>
+    </record>
+
+    <record id="disease_oncology_colorectal_cancer" model="hr_hospital.disease">
+        <field name="name">Colorectal Cancer</field>
+        <field name="code">CRC</field>
+        <field name="description">A cancer that starts in the colon or rectum.</field>
+        <field name="parent_id" ref="disease_oncology"/>
+    </record>
+
+
+    <record id="disease_orthopedics_arthritis" model="hr_hospital.disease">
+        <field name="name">Arthritis</field>
+        <field name="code">ARTH</field>
+        <field name="description">Inflammation of one or more joints, causing pain and stiffness that can worsen with age.</field>
+        <field name="parent_id" ref="disease_orthopedics"/>
+    </record>
+
+    <record id="disease_orthopedics_osteoporosis" model="hr_hospital.disease">
+        <field name="name">Osteoporosis</field>
+        <field name="code">OSTEO</field>
+        <field name="description">A condition in which bones become weak and brittle.</field>
+        <field name="parent_id" ref="disease_orthopedics"/>
+    </record>
+
+    <record id="disease_orthopedics_scoliosis" model="hr_hospital.disease">
+        <field name="name">Scoliosis</field>
+        <field name="code">SCOL</field>
+        <field name="description">A sideways curvature of the spine.</field>
+        <field name="parent_id" ref="disease_orthopedics"/>
+    </record>
+
+    <record id="disease_orthopedics_fractures" model="hr_hospital.disease">
+        <field name="name">Fractures</field>
+        <field name="code">FX</field>
+        <field name="description">A complete or partial break in a bone.</field>
+        <field name="parent_id" ref="disease_orthopedics"/>
+    </record>
+
+    <record id="disease_orthopedics_back_pain" model="hr_hospital.disease">
+        <field name="name">Back Pain</field>
+        <field name="code">BP</field>
+        <field name="description">Pain felt in the back that usually originates from the muscles, nerves, bones, joints, or other structures in the spine.</field>
+        <field name="parent_id" ref="disease_orthopedics"/>
+    </record>
+
+
+    <record id="disease_dermatology" model="hr_hospital.disease">
+        <field name="name">Dermatology</field>
+        <field name="code">DERM</field>
+        <field name="description">Diseases related to the skin.</field>
+    </record>
+
+    <record id="disease_dermatology_acne" model="hr_hospital.disease">
+        <field name="name">Acne</field>
+        <field name="code">ACNE</field>
+        <field name="description">A skin condition that occurs when hair follicles are clogged with oil and dead skin cells.</field>
+        <field name="parent_id" ref="disease_dermatology"/>
+    </record>
+
+    <record id="disease_dermatology_psoriasis" model="hr_hospital.disease">
+        <field name="name">Psoriasis</field>
+        <field name="code">PSOR</field>
+        <field name="description">A skin disease that causes red, itchy scaly patches, most commonly on the knees, elbows, trunk, and scalp.</field>
+        <field name="parent_id" ref="disease_dermatology"/>
+    </record>
+
+    <record id="disease_dermatology_eczema" model="hr_hospital.disease">
+        <field name="name">Eczema</field>
+        <field name="code">ECZ</field>
+        <field name="description">A condition that makes the skin red, itchy, and inflamed.</field>
+        <field name="parent_id" ref="disease_dermatology"/>
+    </record>
+
+    <record id="disease_dermatology_rosacea" model="hr_hospital.disease">
+        <field name="name">Rosacea</field>
+        <field name="code">ROS</field>
+        <field name="description">A common skin condition that causes redness and visible blood vessels in your face.</field>
+        <field name="parent_id" ref="disease_dermatology"/>
+    </record>
+
+    <record id="disease_dermatology_skin_infections" model="hr_hospital.disease">
+        <field name="name">Skin Infections</field>
+        <field name="code">SKINF</field>
+        <field name="description">Infections of the skin, caused by bacteria, viruses, fungi, or parasites.</field>
+        <field name="parent_id" ref="disease_dermatology"/>
+    </record>
+
+
+    <record id="disease_endocrinology" model="hr_hospital.disease">
+        <field name="name">Endocrinology</field>
+        <field name="code">ENDO</field>
+        <field name="description">Diseases related to the endocrine system.</field>
+    </record>
+
+    <record id="disease_endocrinology_diabetes" model="hr_hospital.disease">
+        <field name="name">Diabetes</field>
+        <field name="code">DIAB</field>
+        <field name="description">A disease that occurs when your blood glucose, also called blood sugar, is too high.</field>
+        <field name="parent_id" ref="disease_endocrinology"/>
+    </record>
+
+    <record id="disease_endocrinology_thyroid_disorders" model="hr_hospital.disease">
+        <field name="name">Thyroid Disorders</field>
+        <field name="code">THY</field>
+        <field name="description">Diseases of the thyroid gland, including hyperthyroidism and hypothyroidism.</field>
+        <field name="parent_id" ref="disease_endocrinology"/>
+    </record>
+
+    <record id="disease_endocrinology_adrenal_disorders" model="hr_hospital.disease">
+        <field name="name">Adrenal Disorders</field>
+        <field name="code">ADR</field>
+        <field name="description">Diseases of the adrenal glands, which produce hormones that help regulate metabolism, immune system, blood pressure, and other essential functions.</field>
+        <field name="parent_id" ref="disease_endocrinology"/>
+    </record>
+
+    <record id="disease_gastroenterology" model="hr_hospital.disease">
+        <field name="name">Gastroenterology</field>
+        <field name="code">GASTRO</field>
+        <field name="description">Diseases related to the digestive system.</field>
+    </record>
+
+    <record id="disease_gastroenterology_ulcers" model="hr_hospital.disease">
+        <field name="name">Ulcers</field>
+        <field name="code">ULC</field>
+        <field name="description">Sores that develop on the lining of the stomach, small intestine, or esophagus.</field>
+        <field name="parent_id" ref="disease_gastroenterology"/>
+    </record>
+
+    <record id="disease_gastroenterology_hepatitis" model="hr_hospital.disease">
+        <field name="name">Hepatitis</field>
+        <field name="code">HEP</field>
+        <field name="description">An inflammation of the liver.</field>
+        <field name="parent_id" ref="disease_gastroenterology"/>
+    </record>
+
+    <record id="disease_gastroenterology_ibd" model="hr_hospital.disease">
+        <field name="name">Inflammatory Bowel Disease</field>
+        <field name="code">IBD</field>
+        <field name="description">An umbrella term used to describe disorders that involve chronic inflammation of the digestive tract.</field>
+        <field name="parent_id" ref="disease_gastroenterology"/>
+    </record>
+
+    <record id="disease_gastroenterology_colitis" model="hr_hospital.disease">
+        <field name="name">Colitis</field>
+        <field name="code">COLITIS</field>
+        <field name="description">An inflammation of the inner lining of the colon.</field>
+        <field name="parent_id" ref="disease_gastroenterology"/>
+    </record>
+</odoo>

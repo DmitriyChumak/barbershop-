@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Inherit and extend the form view for Book Category -->
+    <record id="view_library_book_category_form_inherit" model="ir.ui.view">
+        <field name="name">library.book.category.form.inherit</field>
+        <field name="model">library.book.category</field>
+        <field name="inherit_id" ref="school_lesson_6_1.view_library_book_category_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group" position="after">
+                <footer>
+                    <button name="get_books" string="Show Books" type="object" class="oe_stat_button" icon="fa-book"/>
+                </footer>
+            </xpath>
+        </field>
+    </record>
+</odoo>

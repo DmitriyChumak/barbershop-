@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+        <!-- Define the new groups -->
+        <!-- Trainee Group -->
+        <!-- This group is for trainees who have limited access rights -->
+        <record id="group_library_trainee" model="res.groups">
+            <field name="name">Trainee</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>
+
+         <!-- User Group -->
+        <!-- This group is for regular users who have moderate access rights -->
+        <record id="group_library_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="base.module_category_user_type"/>
+        </record>
+
+        <!-- Manager Group -->
+        <!-- This group has the highest level of access and implies system-level permissions -->
+        <record id="group_library_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="base.module_category_user_type"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_system'))]" />
+        </record>
+    </data>
+</odoo>

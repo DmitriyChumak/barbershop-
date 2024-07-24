@@ -1,0 +1,4 @@
+<odoo>
+    <!-- Menu item for authors under the root library menu -->
+    <menuitem id="menu_library_author" name="Authors" parent="school_lesson_6_1.library_menu" sequence="4" action="school_lesson_6_2.action_library_author"/>
+</odoo>

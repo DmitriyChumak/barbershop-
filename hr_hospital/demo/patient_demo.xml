@@ -1,0 +1,168 @@
+<odoo>
+
+    <record id="patient_jon_snow" model="hr_hospital.patient">
+        <field name="first_name">Jon</field>
+        <field name="last_name">Snow</field>
+        <field name="birthdate" eval="'1992-01-01'"/>
+        <field name="gender">male</field>
+        <field name="phone">+1-202-555-0201</field>
+        <field name="address">1 Winterfell, North</field>
+        <field name="email">jon.snow@got.com</field>
+        <field name="passport_info">A12345678</field>
+    </record>
+
+    <record id="patient_daenerys_targaryen" model="hr_hospital.patient">
+        <field name="first_name">Daenerys</field>
+        <field name="last_name">Targaryen</field>
+        <field name="birthdate" eval="'1990-07-12'"/>
+        <field name="gender">female</field>
+        <field name="phone">+1-202-555-0202</field>
+        <field name="address">2 Dragonstone, Essos</field>
+        <field name="email">daenerys.targaryen@got.com</field>
+        <field name="passport_info">B23456789</field>
+    </record>
+
+    <record id="patient_tyrion_lannister" model="hr_hospital.patient">
+        <field name="first_name">Tyrion</field>
+        <field name="last_name">Lannister</field>
+        <field name="birthdate" eval="'1978-03-05'"/>
+        <field name="gender">male</field>
+        <field name="phone">+1-202-555-0203</field>
+        <field name="address">3 Casterly Rock, West</field>
+        <field name="email">tyrion.lannister@got.com</field>
+        <field name="passport_info">C34567890</field>
+    </record>
+
+    <record id="patient_sansa_stark" model="hr_hospital.patient">
+        <field name="first_name">Sansa</field>
+        <field name="last_name">Stark</field>
+        <field name="birthdate" eval="'1994-02-10'"/>
+        <field name="gender">female</field>
+        <field name="phone">+1-202-555-0204</field>
+        <field name="address">4 Winterfell, North</field>
+        <field name="email">sansa.stark@got.com</field>
+        <field name="passport_info">D45678901</field>
+    </record>
+
+    <record id="patient_arya_stark" model="hr_hospital.patient">
+        <field name="first_name">Arya</field>
+        <field name="last_name">Stark</field>
+        <field name="birthdate" eval="'1996-11-13'"/>
+        <field name="gender">female</field>
+        <field name="phone">+1-202-555-0205</field>
+        <field name="address">5 Winterfell, North</field>
+        <field name="email">arya.stark@got.com</field>
+        <field name="passport_info">E56789012</field>
+    </record>
+
+    <record id="patient_jamie_lannister" model="hr_hospital.patient">
+        <field name="first_name">Jamie</field>
+        <field name="last_name">Lannister</field>
+        <field name="birthdate" eval="'1980-09-14'"/>
+        <field name="gender">male</field>
+        <field name="phone">+1-202-555-0206</field>
+        <field name="address">6 Casterly Rock, West</field>
+        <field name="email">jamie.lannister@got.com</field>
+        <field name="passport_info">F67890123</field>
+    </record>
+
+    <record id="patient_cersei_lannister" model="hr_hospital.patient">
+        <field name="first_name">Cersei</field>
+        <field name="last_name">Lannister</field>
+        <field name="birthdate" eval="'1980-09-14'"/>
+        <field name="gender">female</field>
+        <field name="phone">+1-202-555-0207</field>
+        <field name="address">7 Casterly Rock, West</field>
+        <field name="email">cersei.lannister@got.com</field>
+        <field name="passport_info">G78901234</field>
+    </record>
+
+    <record id="patient_brandon_stark" model="hr_hospital.patient">
+        <field name="first_name">Brandon</field>
+        <field name="last_name">Stark</field>
+        <field name="birthdate" eval="'1996-12-02'"/>
+        <field name="gender">male</field>
+        <field name="phone">+1-202-555-0208</field>
+        <field name="address">8 Winterfell, North</field>
+        <field name="email">brandon.stark@got.com</field>
+        <field name="passport_info">H89012345</field>
+    </record>
+
+
+    <record id="patient_walter_white" model="hr_hospital.patient">
+        <field name="first_name">Walter</field>
+        <field name="last_name">White</field>
+        <field name="birthdate" eval="'1960-09-07'"/>
+        <field name="gender">male</field>
+        <field name="phone">+1-202-555-0301</field>
+        <field name="address">308 Negra Arroyo Lane, Albuquerque</field>
+        <field name="email">walter.white@bb.com</field>
+        <field name="passport_info">I90123456</field>
+    </record>
+
+    <record id="patient_jesse_pinkman" model="hr_hospital.patient">
+        <field name="first_name">Jesse</field>
+        <field name="last_name">Pinkman</field>
+        <field name="birthdate" eval="'1984-09-24'"/>
+        <field name="gender">male</field>
+        <field name="phone">+1-202-555-0302</field>
+        <field name="address">9809 Margo Street, Albuquerque</field>
+        <field name="email">jesse.pinkman@bb.com</field>
+        <field name="passport_info">J01234567</field>
+    </record>
+
+    <record id="patient_skyler_white" model="hr_hospital.patient">
+        <field name="first_name">Skyler</field>
+        <field name="last_name">White</field>
+        <field name="birthdate" eval="'1970-08-11'"/>
+        <field name="gender">female</field>
+        <field name="phone">+1-202-555-0303</field>
+        <field name="address">308 Negra Arroyo Lane, Albuquerque</field>
+        <field name="email">skyler.white@bb.com</field>
+        <field name="passport_info">K12345678</field>
+    </record>
+
+    <record id="patient_hank_schrader" model="hr_hospital.patient">
+        <field name="first_name">Hank</field>
+        <field name="last_name">Schrader</field>
+        <field name="birthdate" eval="'1966-03-17'"/>
+        <field name="gender">male</field>
+        <field name="phone">+1-202-555-0304</field>
+        <field name="address">4901 Cumbre Del Sur Court, Albuquerque</field>
+        <field name="email">hank.schrader@bb.com</field>
+        <field name="passport_info">L23456789</field>
+    </record>
+
+    <record id="patient_marie_schrader" model="hr_hospital.patient">
+        <field name="first_name">Marie</field>
+        <field name="last_name">Schrader</field>
+        <field name="birthdate" eval="'1970-05-12'"/>
+        <field name="gender">female</field>
+        <field name="phone">+1-202-555-0305</field>
+        <field name="address">4901 Cumbre Del Sur Court, Albuquerque</field>
+        <field name="email">marie.schrader@bb.com</field>
+        <field name="passport_info">M34567890</field>
+    </record>
+
+    <record id="patient_saúl_goodman" model="hr_hospital.patient">
+        <field name="first_name">Saul</field>
+        <field name="last_name">Goodman</field>
+        <field name="birthdate" eval="'1962-11-12'"/>
+        <field name="gender">male</field>
+        <field name="phone">+1-202-555-0306</field>
+        <field name="address">160 Juan Tabo Boulevard, Albuquerque</field>
+        <field name="email">saul.goodman@bb.com</field>
+        <field name="passport_info">N45678901</field>
+    </record>
+
+    <record id="patient_gustavo_fring" model="hr_hospital.patient">
+        <field name="first_name">Gustavo</field>
+        <field name="last_name">Fring</field>
+        <field name="birthdate" eval="'1961-07-04'"/>
+        <field name="gender">male</field>
+        <field name="phone">+1-202-555-0307</field>
+        <field name="address">1213 Juan Tabo Boulevard, Albuquerque</field>
+        <field name="email">gustavo.fring@bb.com</field>
+        <field name="passport_info">O56789012</field>
+    </record>
+</odoo>

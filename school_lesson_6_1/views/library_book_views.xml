@@ -1,0 +1,76 @@
+<odoo>
+    <!--
+        Tree view for Library Book
+        This view defines the tree view for displaying the list of books in the library.
+    -->
+    <record id="view_library_book_tree" model="ir.ui.view">
+        <field name="name">library.book.tree</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <tree string="Library Books">
+                <!-- Field for the name of the book -->
+                <field name="name"/>
+                <!-- Field for the category of the book -->
+                <field name="category_id"/>
+                <!-- Field for the reader of the book -->
+                <field name="reader_id"/>
+                <!-- Field for the checkout date of the book -->
+                <field name="checkout_date"/>
+                <!-- Field for the return date of the book -->
+                <field name="return_date"/>
+                <!-- Field for the user responsible for the book -->
+                <field name="user_id"/>
+                <!-- Field indicating if the book is active -->
+                <field name="is_active"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--
+        Form view for Library Book
+        This view defines the form view for creating and editing books in the library.
+    -->
+    <record id="view_library_book_form" model="ir.ui.view">
+        <field name="name">library.book.form</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <form string="Library Book">
+                <sheet>
+                    <group>
+                        <!-- Field for the name of the book -->
+                        <field name="name"/>
+                        <!-- Field for the category of the book -->
+                        <field name="category_id"/>
+                        <!-- Field for the reader of the book -->
+                        <field name="reader_id"/>
+                        <!-- Field for the checkout date of the book -->
+                        <field name="checkout_date"/>
+                        <!-- Field for the return date of the book -->
+                        <field name="return_date"/>
+                        <!-- Field for the user responsible for the book -->
+                        <field name="user_id"/>
+                        <!-- Field indicating if the book is active -->
+                        <field name="is_active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--
+        Action for Library Book
+        This action defines how the books will be displayed and accessed in the system.
+    -->
+    <record id="library_book_action" model="ir.actions.act_window">
+        <field name="name">Library Books</field>
+        <field name="res_model">library.book</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_library_book_tree"/>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first book
+            </p>
+        </field>
+    </record>
+</odoo>

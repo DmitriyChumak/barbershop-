@@ -1,0 +1,102 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* school_lesson_6_2
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-22 18:21+0000\n"
+"PO-Revision-Date: 2024-07-22 18:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: school_lesson_6_2
+#: model:ir.model.fields,field_description:school_lesson_6_2.field_library_book__author_id
+msgid "Author"
+msgstr "Автор"
+
+#. module: school_lesson_6_2
+#: model:ir.model.fields,field_description:school_lesson_6_2.field_library_author__name
+msgid "Author Name"
+msgstr "Ім'я автора"
+
+#. module: school_lesson_6_2
+#: model:ir.actions.act_window,name:school_lesson_6_2.action_library_author
+#: model:ir.ui.menu,name:school_lesson_6_2.menu_library_author
+msgid "Authors"
+msgstr "Автори"
+
+#. module: school_lesson_6_2
+#: model:ir.model.fields,field_description:school_lesson_6_2.field_library_author__biography
+msgid "Biography"
+msgstr "Біографія"
+
+#. module: school_lesson_6_2
+#: model:ir.model.fields,field_description:school_lesson_6_2.field_library_author__book_ids
+msgid "Books"
+msgstr "Книги"
+
+#. module: school_lesson_6_2
+#: model:ir.model.fields,field_description:school_lesson_6_2.field_library_author__create_uid
+msgid "Created by"
+msgstr "Створено"
+
+#. module: school_lesson_6_2
+#: model:ir.model.fields,field_description:school_lesson_6_2.field_library_author__create_date
+msgid "Creation Date"
+msgstr "Дата створення"
+
+#. module: school_lesson_6_2
+#: model:ir.model.fields,field_description:school_lesson_6_2.field_library_author__display_name
+msgid "Display Name"
+msgstr "Відображуване ім'я"
+
+#. module: school_lesson_6_2
+#: model:ir.model.fields,field_description:school_lesson_6_2.field_library_author__id
+msgid "ID"
+msgstr "Ідентифікатор"
+
+#. module: school_lesson_6_2
+#: model:ir.model.fields,field_description:school_lesson_6_2.field_library_author__write_uid
+msgid "Last Updated by"
+msgstr "Останнє оновлення"
+
+#. module: school_lesson_6_2
+#: model:ir.model.fields,field_description:school_lesson_6_2.field_library_author__write_date
+msgid "Last Updated on"
+msgstr "Останнє оновлення"
+
+#. module: school_lesson_6_2
+#: model:ir.model,name:school_lesson_6_2.model_library_author
+msgid "Library Author"
+msgstr "Автор бібліотеки"
+
+#. module: school_lesson_6_2
+#: model:ir.model,name:school_lesson_6_2.model_library_book
+msgid "Library Book"
+msgstr "Книга бібліотеки"
+
+#. module: school_lesson_6_2
+#: model:res.groups,name:school_lesson_6_2.group_library_manager
+msgid "Manager"
+msgstr "Менеджер"
+
+#. module: school_lesson_6_2
+#: model:ir.model.fields,field_description:school_lesson_6_2.field_library_author__recent_author
+msgid "Recent Author"
+msgstr "Нещодавній автор"
+
+#. module: school_lesson_6_2
+#: model:res.groups,name:school_lesson_6_2.group_library_trainee
+msgid "Trainee"
+msgstr "Стажист"
+
+#. module: school_lesson_6_2
+#: model:res.groups,name:school_lesson_6_2.group_library_user
+msgid "User"
+msgstr "Користувач"

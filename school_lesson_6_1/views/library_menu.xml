@@ -1,0 +1,19 @@
+<odoo>
+    <!--
+        Root menu item for the Library application.
+        This defines the main entry point for the Library module in the Odoo menu.
+    -->
+    <menuitem id="library_menu" name="Library" sequence="1"/>
+
+    <!--
+        Submenu item for Books.
+        This defines a submenu under the Library menu for managing books.
+    -->
+    <menuitem id="library_books_menu" name="Books" parent="library_menu" action="library_book_action" sequence="1"/>
+
+    <!--
+        Submenu item for Book Categories.
+        This defines a submenu under the Library menu for managing book categories.
+    -->
+    <menuitem id="library_book_categories_menu" name="Book Categories" parent="library_menu" action="library_book_category_action" sequence="2"/>
+</odoo>

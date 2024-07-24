@@ -1,0 +1,63 @@
+<odoo>
+    <data>
+        <record id="diagnosis_1" model="hr_hospital.diagnosis">
+            <field name="name">Influenza Diagnosis</field>
+            <field name="disease_id" ref="disease_infectious_influenza"/>
+            <field name="visit_id" ref="visit_1"/>
+        </record>
+
+        <record id="diagnosis_2" model="hr_hospital.diagnosis">
+            <field name="name">Heart Attack Diagnosis</field>
+            <field name="disease_id" ref="disease_cardiology_heart_attack"/>
+            <field name="visit_id" ref="visit_2"/>
+        </record>
+
+        <record id="diagnosis_3" model="hr_hospital.diagnosis">
+            <field name="name">Migraine Diagnosis</field>
+            <field name="disease_id" ref="disease_neurology_migraines"/>
+            <field name="visit_id" ref="visit_3"/>
+        </record>
+
+        <record id="diagnosis_4" model="hr_hospital.diagnosis">
+            <field name="name">Food Poisoning Diagnosis</field>
+            <field name="disease_id" ref="disease_gastroenterology_colitis"/>
+            <field name="visit_id" ref="visit_4"/>
+        </record>
+
+        <record id="diagnosis_5" model="hr_hospital.diagnosis">
+            <field name="name">Arthritis Diagnosis</field>
+            <field name="disease_id" ref="disease_orthopedics_arthritis"/>
+            <field name="visit_id" ref="visit_5"/>
+        </record>
+
+        <record id="diagnosis_6" model="hr_hospital.diagnosis">
+            <field name="name">Fatigue Diagnosis</field>
+            <field name="disease_id" ref="disease_endocrinology_diabetes"/>
+            <field name="visit_id" ref="visit_6"/>
+        </record>
+
+        <record id="diagnosis_7" model="hr_hospital.diagnosis">
+            <field name="name">Angina Diagnosis</field>
+            <field name="disease_id" ref="disease_cardiology_arrhythmia"/>
+            <field name="visit_id" ref="visit_7"/>
+        </record>
+
+        <record id="diagnosis_8" model="hr_hospital.diagnosis">
+            <field name="name">Gastroenteritis Diagnosis</field>
+            <field name="disease_id" ref="disease_gastroenterology_colitis"/>
+            <field name="visit_id" ref="visit_8"/>
+        </record>
+
+        <record id="diagnosis_9" model="hr_hospital.diagnosis">
+            <field name="name">Viral Infection Diagnosis</field>
+            <field name="disease_id" ref="disease_infectious_disease"/>
+            <field name="visit_id" ref="visit_9"/>
+        </record>
+
+        <record id="diagnosis_10" model="hr_hospital.diagnosis">
+            <field name="name">Chronic Fatigue Syndrome Diagnosis</field>
+            <field name="disease_id" ref="disease_endocrinology_diabetes"/>
+            <field name="visit_id" ref="visit_10"/>
+        </record>
+    </data>
+</odoo>

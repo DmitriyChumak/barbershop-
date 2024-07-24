@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="my_demo_tree" model="ir.ui.view">
+        <field name="name">my.demo.tree ()</field>
+        <field name="model">my.demo</field>
+        <field name="arch" type="xml">
+            <tree string="my_demo_tree">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="my_demo_form" model="ir.ui.view">
+        <field name="name">my.demo.form</field>
+        <field name="model">my.demo</field>
+        <field name="arch" type="xml">
+            <form string="my_form">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="kw_my_demo_act_window" model="ir.actions.act_window">
+        <field name="name">My Demo</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">my.demo</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="my_demo_menu"
+              name="My Demo"
+              action="kw_my_demo_act_window"
+              sequence="200"/>
+
+    <menuitem id="my_demo_menu_1"
+              name="My Demo menu 1"
+              parent="my_demo_menu"
+              action="kw_my_demo_act_window"
+              sequence="200"/>
+</odoo>

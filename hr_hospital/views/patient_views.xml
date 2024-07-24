@@ -1,0 +1,102 @@
+<!--Patient view-->
+
+<odoo>
+<!--    tree-->
+    <record id="view_patient_tree" model="ir.ui.view">
+        <field name="name">hr_hospital.patient.tree</field>
+        <field name="model">hr_hospital.patient</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="gender"/>
+                <field name="age"/>
+                <field name="phone"/>
+                <field name="contact_person"/>
+                <field name="personal_doctor_id"/>
+                <field name="address"/>
+                <field name="email"/>
+                <field name="passport_info"/>
+            </tree>
+        </field>
+    </record>
+
+<!--    form-->
+    <record id="view_patient_form" model="ir.ui.view">
+        <field name="name">hr_hospital.patient.form</field>
+        <field name="model">hr_hospital.patient</field>
+        <field name="arch" type="xml">
+            <form string="Patient">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="first_name" required="True"/>
+                            <field name="last_name" required="True"/>
+                            <field name="birthdate" widget="datepicker"/>
+                            <field name="gender" widget="selection"/>
+                            <field name="phone" widget="phone"/>
+                            <field name="photo"/>
+                            <field name="address"/>
+                            <field name="email" widget="email"/>
+                        </group>
+                        <group>
+                            <field name="name" readonly="True"/>
+                            <field name="age" readonly="True"/>
+                            <field name="passport_info"/>
+                            <field name="contact_person"/>
+                            <field name="personal_doctor_id" widget="many2one"/>
+                            <field name="supervised_doctor_id" widget="many2one"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Visits">
+                            <field name="visit_ids"/>
+                        </page>
+                        <page string="Diseases">
+                            <field name="disease_ids"/>
+                        </page>
+                        <page string="Diagnosis History">
+                            <field name="diagnosis_history">
+                                <tree string="Diagnosis History">
+                                    <field name="disease_id"/>
+                                    <field name="description"/>
+                                    <field name="doctor_id"/>
+                                    <field name="approved"/>
+                                    <field name="mentor_id"/>
+                                    <field name="visit_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    <button name="action_view_visits" type="object" string="View Visit History" class="btn-primary"/>
+                    <button name="action_create_quick_visit" type="object" string="Quick Visit" class="btn-secondary"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_patient_search" model="ir.ui.view">
+        <field name="name">patient.search</field>
+        <field name="model">hr_hospital.patient</field>
+        <field name="arch" type="xml">
+            <search string="Patients">
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <group expand="True" string="Group By">
+                    <filter name="group_by_personal_doctor" string="Personal Doctor" context="{'group_by':'personal_doctor_id'}"/>
+                    <filter name="group_by_supervised_doctor" string="Supervised Doctor" context="{'group_by':'supervised_doctor_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+        <!-- Action definition for patient list view -->
+    <record id="action_patient" model="ir.actions.act_window">
+        <field name="name">Patients</field>
+        <field name="res_model">hr_hospital.patient</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_patient_tree"/>
+    </record>
+
+</odoo>

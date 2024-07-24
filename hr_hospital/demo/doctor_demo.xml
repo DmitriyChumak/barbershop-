@@ -1,0 +1,170 @@
+<odoo>
+    <record id="doctor_gregory_house" model="hr_hospital.doctor">
+        <field name="first_name">Gregory</field>
+        <field name="last_name">House</field>
+        <field name="birthdate" eval="'1959-06-11'"/>
+        <field name="gender">male</field>
+        <field name="phone">+1-202-555-0147</field>
+        <field name="address">221B Baker Street, Princeton</field>
+        <field name="email">gregory.house@hospital.com</field>
+        <field name="specialization_id" ref="specialization_diagnostician"/>
+        <field name="is_intern">False</field>
+    </record>
+
+    <record id="doctor_james_wilson" model="hr_hospital.doctor">
+        <field name="first_name">James</field>
+        <field name="last_name">Wilson</field>
+        <field name="birthdate" eval="'1969-02-28'"/>
+        <field name="gender">male</field>
+        <field name="phone">+1-202-555-0125</field>
+        <field name="address">456 Elm Street, Princeton</field>
+        <field name="email">james.wilson@hospital.com</field>
+        <field name="specialization_id" ref="specialization_oncologist"/>
+        <field name="is_intern">False</field>
+    </record>
+
+    <record id="doctor_eric_foreman" model="hr_hospital.doctor">
+        <field name="first_name">Eric</field>
+        <field name="last_name">Foreman</field>
+        <field name="birthdate" eval="'1973-07-15'"/>
+        <field name="gender">male</field>
+        <field name="phone">+1-202-555-0176</field>
+        <field name="address">789 Pine Street, Princeton</field>
+        <field name="email">eric.foreman@hospital.com</field>
+        <field name="specialization_id" ref="specialization_neurologist"/>
+        <field name="is_intern">True</field>
+    </record>
+
+    <record id="doctor_allison_cameron" model="hr_hospital.doctor">
+        <field name="first_name">Allison</field>
+        <field name="last_name">Cameron</field>
+        <field name="birthdate" eval="'1978-03-25'"/>
+        <field name="gender">female</field>
+        <field name="phone">+1-202-555-0199</field>
+        <field name="address">321 Oak Street, Princeton</field>
+        <field name="email">allison.cameron@hospital.com</field>
+        <field name="specialization_id" ref="specialization_immunologist"/>
+        <field name="is_intern">True</field>
+    </record>
+
+    <record id="doctor_robert_chase" model="hr_hospital.doctor">
+        <field name="first_name">Robert</field>
+        <field name="last_name">Chase</field>
+        <field name="birthdate" eval="'1975-06-16'"/>
+        <field name="gender">male</field>
+        <field name="phone">+1-202-555-0133</field>
+        <field name="address">654 Birch Street, Princeton</field>
+        <field name="email">robert.chase@hospital.com</field>
+        <field name="specialization_id" ref="specialization_surgeon"/>
+        <field name="is_intern">True</field>
+    </record>
+
+    <record id="doctor_chris_taub" model="hr_hospital.doctor">
+        <field name="first_name">Chris</field>
+        <field name="last_name">Taub</field>
+        <field name="birthdate" eval="'1965-08-19'"/>
+        <field name="gender">male</field>
+        <field name="phone">+1-202-555-0154</field>
+        <field name="address">987 Cedar Street, Princeton</field>
+        <field name="email">chris.taub@hospital.com</field>
+        <field name="specialization_id" ref="specialization_plastic_surgeon"/>
+        <field name="is_intern">True</field>
+    </record>
+
+    <record id="doctor_remy_hadley" model="hr_hospital.doctor">
+        <field name="first_name">Remy</field>
+        <field name="last_name">Hadley</field>
+        <field name="birthdate" eval="'1984-11-22'"/>
+        <field name="gender">female</field>
+        <field name="phone">+1-202-555-0166</field>
+        <field name="address">543 Chestnut Street, Princeton</field>
+        <field name="email">remy.hadley@hospital.com</field>
+        <field name="specialization_id" ref="specialization_internal_medicine"/>
+        <field name="is_intern">False</field>
+    </record>
+
+    <record id="doctor_lawrence_kutner" model="hr_hospital.doctor">
+        <field name="first_name">Lawrence</field>
+        <field name="last_name">Kutner</field>
+        <field name="birthdate" eval="'1977-09-18'"/>
+        <field name="gender">male</field>
+        <field name="phone">+1-202-555-0170</field>
+        <field name="address">246 Willow Street, Princeton</field>
+        <field name="email">lawrence.kutner@hospital.com</field>
+        <field name="specialization_id" ref="specialization_internal_medicine"/>
+        <field name="is_intern">False</field>
+    </record>
+
+    <record id="doctor_lisa_cuddy" model="hr_hospital.doctor">
+        <field name="first_name">Lisa</field>
+        <field name="last_name">Cuddy</field>
+        <field name="birthdate" eval="'1968-05-27'"/>
+        <field name="gender">female</field>
+        <field name="phone">+1-202-555-0188</field>
+        <field name="address">123 Maple Drive, Princeton</field>
+        <field name="email">lisa.cuddy@hospital.com</field>
+        <field name="specialization_id" ref="specialization_cardiologist"/>
+        <field name="is_intern">False</field>
+    </record>
+
+    <record id="doctor_stacy_warner" model="hr_hospital.doctor">
+        <field name="first_name">Stacy</field>
+        <field name="last_name">Warner</field>
+        <field name="birthdate" eval="'1968-10-08'"/>
+        <field name="gender">female</field>
+        <field name="phone">+1-202-555-0144</field>
+        <field name="address">852 Spruce Street, Princeton</field>
+        <field name="email">stacy.warner@hospital.com</field>
+        <field name="specialization_id" ref="specialization_neurologist"/>
+        <field name="is_intern">False</field>
+    </record>
+
+    <record id="doctor_edward_vogler" model="hr_hospital.doctor">
+        <field name="first_name">Edward</field>
+        <field name="last_name">Vogler</field>
+        <field name="birthdate" eval="'1955-03-14'"/>
+        <field name="gender">male</field>
+        <field name="phone">+1-202-555-0185</field>
+        <field name="address">58 Oak Street, Princeton</field>
+        <field name="email">edward.vogler@hospital.com</field>
+        <field name="specialization_id" ref="specialization_oncologist"/>
+        <field name="is_intern">False</field>
+    </record>
+
+    <record id="doctor_tracy_clark" model="hr_hospital.doctor">
+        <field name="first_name">Tracy</field>
+        <field name="last_name">Clark</field>
+        <field name="birthdate" eval="'1980-05-10'"/>
+        <field name="gender">female</field>
+        <field name="phone">+1-202-555-0193</field>
+        <field name="address">789 Elm Street, Princeton</field>
+        <field name="email">tracy.clark@hospital.com</field>
+        <field name="specialization_id" ref="specialization_rheumatologist"/>
+        <field name="is_intern">False</field>
+    </record>
+
+    <record id="doctor_samantha_carr" model="hr_hospital.doctor">
+        <field name="first_name">Samantha</field>
+        <field name="last_name">Carr</field>
+        <field name="birthdate" eval="'1981-05-22'"/>
+        <field name="gender">female</field>
+        <field name="phone">+1-202-555-0134</field>
+        <field name="address">78 Willow Street, Princeton</field>
+        <field name="email">samantha.carr@hospital.com</field>
+        <field name="specialization_id" ref="specialization_pulmonologist"/>
+        <field name="is_intern">False</field>
+    </record>
+
+    <record id="doctor_jessica_adams" model="hr_hospital.doctor">
+        <field name="first_name">Jessica</field>
+        <field name="last_name">Adams</field>
+        <field name="birthdate" eval="'1983-04-10'"/>
+        <field name="gender">female</field>
+        <field name="phone">+1-202-555-0142</field>
+        <field name="address">89 Cedar Street, Princeton</field>
+        <field name="email">jessica.adams@hospital.com</field>
+        <field name="specialization_id" ref="specialization_pulmonologist"/>
+        <field name="is_intern">False</field>
+    </record>
+</odoo>
+

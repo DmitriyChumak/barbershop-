@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Lesson 6.5 - Library Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77aaff 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        .showcase {
+            min-height: 400px;
+            background: url('library.jpg') no-repeat 0 -400px;
+            text-align: center;
+            color: #fff;
+        }
+        .showcase h1 {
+            margin-top: 100px;
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+        .showcase p {
+            font-size: 20px;
+        }
+        .content {
+            padding: 20px;
+            background: #fff;
+        }
+        .content h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Library Management System</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="showcase">
+        <div class="container">
+            <h1>Welcome to the Library Management System</h1>
+            <p>Manage your library efficiently and effectively with our comprehensive system.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="content">
+            <h2>Overview</h2>
+            <p>The <strong>School Lesson 6.5</strong> module integrates and extends the functionalities provided by the previous modules <em>school_lesson_6_1</em>, <em>school_lesson_6_2</em>, <em>school_lesson_6_3</em>, and <em>school_lesson_6_4</em>. It provides a comprehensive set of features for managing books, authors, categories, and user permissions within a library setting.</p>
+
+            <h2>Features</h2>
+            <ul>
+                <li>Manage authors and books</li>
+                <li>Categorize books into different categories</li>
+                <li>Set user permissions for library management</li>
+                <li>Provides a user-friendly interface for library operations</li>
+                <li>Adds a button to the book category form view to show all books in the selected category</li>
+            </ul>
+
+            <h2>Installation</h2>
+            <p>To install this module, you need to:</p>
+            <ol>
+                <li>Ensure that you have the required modules installed and configured:
+                    <ul>
+                        <li><em>school_lesson_6_1</em></li>
+                        <li><em>school_lesson_6_2</em></li>
+                        <li><em>school_lesson_6_3</em></li>
+                        <li><em>school_lesson_6_4</em></li>
+                    </ul>
+                </li>
+                <li>Install the <em>school_lesson_6_5</em> module from the Odoo Apps.</li>
+            </ol>
+
+            <h2>Usage</h2>
+            <p>To use this module:</p>
+            <ol>
+                <li>Navigate to <strong>Library > Book Categories</strong>.</li>
+                <li>Select a book category.</li>
+                <li>Click on the <strong>Show Books</strong> button at the bottom of the form view to see all books in the selected category.</li>
+            </ol>
+
+            <h2>Models</h2>
+            <ul>
+                <li><strong>library.author</strong>: Manages authors of books.</li>
+                <li><strong>library.book</strong>: Manages books and their attributes.</li>
+                <li><strong>library.book.category</strong>: Manages categories of books and includes a method to get all books in the category.</li>
+                <li><strong>res.groups</strong>: Manages user permissions and groups.</li>
+            </ul>
+
+            <h2>Methods</h2>
+            <ul>
+                <li><strong>library.author.get_books</strong>: Returns a list of all books that belong to the current category.</li>
+                <li><strong>library.book.action_scrap_book</strong>: Marks a book as inactive.</li>
+                <li><strong>res.users</strong>: Manages user creation and permission assignments.</li>
+            </ul>
+
+            <h2>Dependencies</h2>
+            <ul>
+                <li><em>school_lesson_6_1</em></li>
+                <li><em>school_lesson_6_2</em></li>
+                <li><em>school_lesson_6_3</em></li>
+                <li><em>school_lesson_6_4</em></li>
+            </ul>
+
+            <h2>Bug Tracker</h2>
+            <p>If you find any issues with this module, please report them on the project's issue tracker.</p>
+
+            <h2>Credits</h2>
+            <p><strong>Author:</strong> Dmitriy Chumak</p>
+            <p><strong>Website:</strong> <a href="https://www.example.com">https://www.example.com</a></p>
+            <p><strong>License:</strong> LGPL-3</p>
+        </section>
+    </div>
+</body>
+</html>

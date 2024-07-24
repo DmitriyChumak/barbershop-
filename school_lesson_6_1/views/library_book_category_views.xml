@@ -1,0 +1,57 @@
+<odoo>
+    <!--
+        List view for Library Book Category
+        This view defines the tree view for displaying the list of book categories in the library.
+    -->
+    <record id="view_library_book_category_tree" model="ir.ui.view">
+        <field name="name">library.book.category.tree</field>
+        <field name="model">library.book.category</field>
+        <field name="arch" type="xml">
+            <tree string="Library Book Categories">
+                <!-- Field for the name of the book category -->
+                <field name="name"/>
+                <!-- Field for the description of the book category -->
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--
+        Form view for Library Book Category
+        This view defines the form view for creating and editing book categories in the library.
+    -->
+    <record id="view_library_book_category_form" model="ir.ui.view">
+        <field name="name">library.book.category.form</field>
+        <field name="model">library.book.category</field>
+        <field name="arch" type="xml">
+            <form string="Library Book Category">
+                <sheet>
+                    <group>
+                        <!-- Field for the name of the book category -->
+                        <field name="name"/>
+                        <!-- Field for the description of the book category -->
+                        <field name="description"/>
+                        <!-- Field for the books in this category -->
+                        <field name="book_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--
+        Action for Library Book Category
+        This action defines how the book categories will be displayed and accessed in the system.
+    -->
+    <record id="library_book_category_action" model="ir.actions.act_window">
+        <field name="name">Library Book Categories</field>
+        <field name="res_model">library.book.category</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_library_book_category_tree"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first book category
+            </p>
+        </field>
+    </record>
+</odoo>

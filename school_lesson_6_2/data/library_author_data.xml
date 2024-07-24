@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Adding authors -->
+    <!-- This section defines new authors to be added to the library.author model -->
+    <record id="library_author_ivan_franko" model="library.author">
+        <!-- Ivan Franko, a renowned Ukrainian author -->
+        <field name="first_name">Ivan</field>
+        <field name="second_name">Franko</field>
+    </record>
+
+    <record id="library_author_jack_london" model="library.author">
+        <!-- Jack London, an American novelist and social activist -->
+        <field name="first_name">Jack</field>
+        <field name="second_name">London</field>
+    </record>
+
+    <record id="library_author_jules_verne" model="library.author">
+        <!-- Jules Verne, a French novelist, poet, and playwright -->
+        <field name="first_name">Jules</field>
+        <field name="second_name">Verne</field>
+    </record>
+
+    <!-- Updating existing books to include authors -->
+    <!-- This section updates existing books to associate them with the newly added authors -->
+    <function model="library.book" name="write">
+        <!-- Updating the book 'Marusia Churai' to include author Ivan Franko -->
+        <value eval="[ref('school_lesson_6_1.book_marusia_churai')]"/>
+        <value eval="{'author_id': ref('school_lesson_6_2.library_author_ivan_franko')}"/>
+    </function>
+
+    <function model="library.book" name="write">
+        <!-- Updating the book 'The Call of the Wild' to include author Jack London -->
+        <value eval="[ref('school_lesson_6_1.book_call_of_the_wild')]"/>
+        <value eval="{'author_id': ref('school_lesson_6_2.library_author_jack_london')}"/>
+    </function>
+
+    <function model="library.book" name="write">
+        <!-- Updating the book 'Twenty Thousand Leagues Under the Sea' to include author Jules Verne -->
+        <value eval="[ref('school_lesson_6_1.book_twenty_thousand_leagues')]"/>
+        <value eval="{'author_id': ref('school_lesson_6_2.library_author_jules_verne')}"/>
+    </function>
+</odoo>

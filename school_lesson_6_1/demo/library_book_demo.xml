@@ -1,0 +1,27 @@
+<!--
+    Demo data for library.book model.
+    This data includes example books that will be available
+    in the system when in demo mode.
+-->
+<odoo>
+    <!-- Record for the book "Маруся Чурай" -->
+    <record id="book_marusia_churai" model="library.book">
+        <field name="name">Маруся Чурай</field>
+        <field name="category_id" ref="category_classics"/> <!-- Reference to the Classics category -->
+        <field name="user_id" ref="base.user_admin"/> <!-- Assigned to the admin user -->
+    </record>
+
+    <!-- Record for the book "Поклик предків" -->
+    <record id="book_call_of_the_wild" model="library.book">
+        <field name="name">Поклик предків</field>
+        <field name="category_id" ref="category_fiction"/> <!-- Reference to the Fiction category -->
+        <field name="user_id" ref="base.user_admin"/> <!-- Assigned to the admin user -->
+    </record>
+
+    <!-- Record for the book "Двадцять тисяч льє під водою" -->
+    <record id="book_twenty_thousand_leagues" model="library.book">
+        <field name="name">Двадцять тисяч льє під водою</field>
+        <field name="category_id" ref="category_fiction"/> <!-- Reference to the Fiction category -->
+        <field name="user_id" ref="base.user_admin"/> <!-- Assigned to the admin user -->
+    </record>
+</odoo>

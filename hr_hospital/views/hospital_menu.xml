@@ -1,0 +1,23 @@
+<!--Hospital menu-->
+
+<odoo>
+    <!-- Root menu item -->
+    <menuitem id="hr_hospital_menu_root" name="Hospital" sequence="1"/>
+
+    <!-- Menu items -->
+    <menuitem id="hr_hospital_menu_patients" name="Patients" parent="hr_hospital_menu_root" sequence="10" action="action_patient"/>
+    <menuitem id="hr_hospital_menu_doctors" name="Doctors" parent="hr_hospital_menu_root" sequence="20" />
+    <menuitem id="hr_hospital_menu_diseases" name="Diseases" parent="hr_hospital_menu_root" sequence="30" action="action_disease"/>
+    <menuitem id="hr_hospital_menu_visits" name="Visits" parent="hr_hospital_menu_root" sequence="40" action="action_visit"/>
+    <menuitem id="hr_hospital_menu_diagnoses" name="Diagnoses" parent="hr_hospital_menu_root" sequence="50" action="action_diagnosis"/>
+
+<!--     Sub-menu Patient ->-->
+<!--    <menuitem id="hr_hospital_menu_patients_all" name="All Patients" parent="hr_hospital_menu_patients" sequence="11" action="action_patient"/>-->
+
+<!--    Sub-menu Doctor -> -->
+    <menuitem id="hr_hospital_menu_doctors_all" name="All Doctors" parent="hr_hospital_menu_doctors" sequence="21" action="action_doctor"/>
+    <menuitem id="hr_hospital_menu_specializations" name="Specializations" parent="hr_hospital.hr_hospital_menu_doctors" sequence="22" action="action_specialization"/>
+
+<!--&lt;!&ndash;    Sub-menu for diseases&ndash;&gt;-->
+<!--    <menuitem id="hr_hospital_menu_diseases_all" name="Disease list" parent="hr_hospital_menu_diseases" sequence="31" action="action_disease"/>-->
+</odoo>

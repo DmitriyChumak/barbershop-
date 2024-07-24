@@ -1,0 +1,44 @@
+<odoo>
+    <record id="view_disease_report_wizard" model="ir.ui.view">
+        <field name="name">disease.report.wizard.form</field>
+        <field name="model">hr_hospital.disease.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Generate Disease Report">
+                <group>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="doctor_ids"/>
+                    <field name="disease_ids"/>
+                </group>
+                <footer>
+                    <button name="generate_report" type="object" string="Generate" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+<!--    <record id="action_disease_report_wizard" model="ir.actions.act_window">-->
+<!--        <field name="name">Generate Disease Report</field>-->
+<!--        <field name="res_model">hr_hospital.disease.report.wizard</field>-->
+<!--        <field name="view_mode">form</field>-->
+<!--        <field name="target">new</field>-->
+<!--    </record>-->
+
+    <record id="action_open_disease_report_wizard" model="ir.actions.server">
+        <field name="name">Generate Disease Report</field>
+        <field name="model_id" ref="hr_hospital.model_hr_hospital_disease"/>
+        <field name="binding_model_id" ref="hr_hospital.model_hr_hospital_disease"/>
+        <field name="state">code</field>
+        <field name="code">
+action = {
+    'type': 'ir.actions.act_window',
+    'name': 'Generate Disease Report',
+    'res_model': 'hr_hospital.disease.report.wizard',
+    'view_mode': 'form',
+    'target': 'new',
+}
+        </field>
+    </record>
+
+</odoo>

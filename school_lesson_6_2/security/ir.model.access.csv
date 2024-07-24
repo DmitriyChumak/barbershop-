@@ -1,0 +1,10 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+# Access rights for the library.book model
+"access_library_book_manager","library.book manager","model_library_book","group_library_manager",1,1,1,1
+"access_library_book_user","library.book user","model_library_book","group_library_user",1,1,0,0
+"access_library_book_trainee","library.book trainee","model_library_book","group_library_trainee",1,0,0,0
+
+# Access rights for the library.author model
+"access_library_author_manager","library.author manager","model_library_author","group_library_manager",1,1,1,1
+"access_library_author_user","library.author user","model_library_author","group_library_user",1,1,1,0
+"access_library_author_trainee","library.author trainee","model_library_author","group_library_trainee",1,0,0,0

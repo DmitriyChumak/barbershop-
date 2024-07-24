@@ -1,0 +1,95 @@
+<odoo>
+    <template id="report_doctor">
+        <t t-call="web.external_layout">
+            <t t-foreach="docs" t-as="doc">
+                <main class="page">
+                    <div class="page">
+                        <!-- Header Section -->
+                        <div class="header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                            <div class="logo" style="flex: 1;">
+                                <img t-att-src="'/web/image/res.company/' + str(doc.env.user.company_id.id) + '/logo'" style="max-height: 80px;"/>
+                            </div>
+                            <div class="company_info" style="flex: 3; text-align: right;">
+                                <h2 t-esc="doc.env.user.company_id.name"/>
+                                <p t-esc="doc.env.user.company_id.street"/>
+                                <p t-esc="doc.env.user.company_id.city"/>
+                                <p t-esc="doc.env.user.company_id.zip"/>
+                                <p t-esc="doc.env.user.company_id.country_id.name"/>
+                                <p t-esc="doc.env.user.company_id.phone"/>
+                                <p t-esc="doc.env.user.company_id.email"/>
+                            </div>
+                        </div>
+
+                        <!-- Report Title -->
+                        <div style="text-align: center; margin-bottom: 30px;">
+                            <h1 style="font-size: 28px; margin: 10px 0;">Doctor Report</h1>
+                            <h2 style="font-size: 20px; margin: 5px 0;" t-esc="doc.name"/>
+                            <h3 style="font-size: 18px; margin: 5px 0;" t-esc="doc.specialization_id.name"/>
+                        </div>
+
+                        <!-- Visit History Section -->
+                        <h4 style="margin-top: 20px;">Visit History</h4>
+                        <table class="table table-condensed" style="width: 100%; border-collapse: collapse; margin-top: 10px; border: 1px solid #000;">
+                            <thead>
+                                <tr>
+                                    <th style="border: 1px solid #000; padding: 5px; background-color: #f2f2f2;">Date</th>
+                                    <th style="border: 1px solid #000; padding: 5px; background-color: #f2f2f2;">Patient</th>
+                                    <th style="border: 1px solid #000; padding: 5px; background-color: #f2f2f2;">State</th>
+                                    <th style="border: 1px solid #000; padding: 5px; background-color: #f2f2f2;">Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.visit_ids.sorted(key=lambda r: r.planned_date_time, reverse=True)" t-as="visit">
+                                    <tr>
+                                        <td style="border: 1px solid #000; padding: 5px;" t-esc="visit.planned_date_time"/>
+                                        <td style="border: 1px solid #000; padding: 5px;" t-esc="visit.patient_id.name"/>
+                                        <td style="border: 1px solid #000; padding: 5px;" t-esc="visit.state"/>
+                                        <td style="border: 1px solid #000; padding: 5px;" t-esc="visit.notes"/>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+
+                        <!-- Patients Section -->
+                        <h4 style="margin-top: 20px;">Patients</h4>
+                        <table class="table table-condensed" style="width: 100%; border-collapse: collapse; margin-top: 10px; border: 1px solid #000;">
+                            <thead>
+                                <tr>
+                                    <th style="border: 1px solid #000; padding: 5px; background-color: #f2f2f2;">Name</th>
+                                    <th style="border: 1px solid #000; padding: 5px; background-color: #f2f2f2;">Gender</th>
+                                    <th style="border: 1px solid #000; padding: 5px; background-color: #f2f2f2;">Birthdate</th>
+                                    <th style="border: 1px solid #000; padding: 5px; background-color: #f2f2f2;">Phone</th>
+                                    <th style="border: 1px solid #000; padding: 5px; background-color: #f2f2f2;">Current Visit Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.visit_ids.mapped('patient_id')" t-as="patient">
+                                    <tr>
+                                        <td style="border: 1px solid #000; padding: 5px;" t-esc="patient.name"/>
+                                        <td style="border: 1px solid #000; padding: 5px;" t-esc="patient.gender"/>
+                                        <td style="border: 1px solid #000; padding: 5px;" t-esc="patient.birthdate"/>
+                                        <td style="border: 1px solid #000; padding: 5px;" t-esc="patient.phone"/>
+                                        <td style="border: 1px solid #000; padding: 5px;">
+                                            <t t-set="current_visit" t-value="doc.visit_ids.filtered(lambda v: v.patient_id.id == patient.id)[0]"/>
+                                            <span t-attf-style="background-color: #{ 'yellow' if current_visit.state == 'planned' else 'grey' if current_visit.state == 'cancelled' else 'red'}">
+                                                <t t-esc="current_visit.state"/>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="page-break-after: always;"></div>
+                </main>
+            </t>
+            <!-- Footer Section -->
+            <t t-call="web.internal_layout">
+                <div class="footer" style="text-align: center;">
+                    <p>Date and Time of Print: <t t-esc="datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')"/></p>
+                    <p>City: <t t-esc="doc.env.user.company_id.city"/></p>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

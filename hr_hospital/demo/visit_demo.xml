@@ -1,0 +1,103 @@
+<odoo>
+    <data noupdate="1">
+        <record id="visit_1" model="hr_hospital.visit">
+            <field name="actual_date_time" eval="(datetime.now() - timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="planned_date_time" eval="(datetime.now() - timedelta(days=5)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="doctor_id" ref="doctor_gregory_house"/>
+            <field name="patient_id" ref="patient_jon_snow"/>
+            <field name="state">completed</field>
+            <field name="symptoms">Fever, cough, sore throat</field>
+            <field name="notes">Patient advised to rest and drink plenty of fluids.</field>
+        </record>
+
+        <record id="visit_2" model="hr_hospital.visit">
+            <field name="actual_date_time" eval="(datetime.now() - timedelta(days=4)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="planned_date_time" eval="(datetime.now() - timedelta(days=9)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="doctor_id" ref="doctor_james_wilson"/>
+            <field name="patient_id" ref="patient_walter_white"/>
+            <field name="state">completed</field>
+            <field name="symptoms">Shortness of breath, chest pain</field>
+            <field name="notes">Patient prescribed medication and advised to avoid strenuous activities.</field>
+        </record>
+
+        <record id="visit_3" model="hr_hospital.visit">
+            <field name="actual_date_time" eval="(datetime.now() - timedelta(days=6)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="planned_date_time" eval="(datetime.now() - timedelta(days=12)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="doctor_id" ref="doctor_eric_foreman"/>
+            <field name="patient_id" ref="patient_daenerys_targaryen"/>
+            <field name="state">completed</field>
+            <field name="symptoms">Headache, dizziness</field>
+            <field name="notes">Patient advised to take pain relief medication and rest.</field>
+        </record>
+
+        <record id="visit_4" model="hr_hospital.visit">
+            <field name="actual_date_time" eval="(datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="planned_date_time" eval="(datetime.now() - timedelta(days=3)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="doctor_id" ref="doctor_allison_cameron"/>
+            <field name="patient_id" ref="patient_jesse_pinkman"/>
+            <field name="state">completed</field>
+            <field name="symptoms">Nausea, vomiting</field>
+            <field name="notes">Patient advised to stay hydrated and avoid solid foods until symptoms improve.</field>
+        </record>
+
+        <record id="visit_5" model="hr_hospital.visit">
+            <field name="actual_date_time" eval="(datetime.now() - timedelta(days=7)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="planned_date_time" eval="(datetime.now() - timedelta(days=10)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="doctor_id" ref="doctor_robert_chase"/>
+            <field name="patient_id" ref="patient_tyrion_lannister"/>
+            <field name="state">completed</field>
+            <field name="symptoms">Joint pain, swelling</field>
+            <field name="notes">Patient prescribed anti-inflammatory medication.</field>
+        </record>
+
+        <record id="visit_6" model="hr_hospital.visit">
+            <field name="actual_date_time" eval="(datetime.now() - timedelta(days=3)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="planned_date_time" eval="(datetime.now() - timedelta(days=6)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="doctor_id" ref="doctor_gregory_house"/>
+            <field name="patient_id" ref="patient_cersei_lannister"/>
+            <field name="state">completed</field>
+            <field name="symptoms">Fatigue, weakness</field>
+            <field name="notes">Patient advised to undergo further testing to determine the cause.</field>
+        </record>
+
+        <record id="visit_7" model="hr_hospital.visit">
+            <field name="actual_date_time" eval="(datetime.now() - timedelta(days=8)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="planned_date_time" eval="(datetime.now() - timedelta(days=11)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="doctor_id" ref="doctor_lisa_cuddy"/>
+            <field name="patient_id" ref="patient_saúl_goodman"/>
+            <field name="state">completed</field>
+            <field name="symptoms">Chest pain, shortness of breath</field>
+            <field name="notes">Patient referred to cardiologist for further evaluation.</field>
+        </record>
+
+        <record id="visit_8" model="hr_hospital.visit">
+            <field name="actual_date_time" eval="(datetime.now() - timedelta(days=5)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="planned_date_time" eval="(datetime.now() - timedelta(days=8)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="doctor_id" ref="doctor_chris_taub"/>
+            <field name="patient_id" ref="patient_jesse_pinkman"/>
+            <field name="state">completed</field>
+            <field name="symptoms">Abdominal pain, diarrhea</field>
+            <field name="notes">Patient advised to follow a bland diet and stay hydrated.</field>
+        </record>
+
+        <record id="visit_9" model="hr_hospital.visit">
+            <field name="actual_date_time" eval="(datetime.now() - timedelta(days=10)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="planned_date_time" eval="(datetime.now() - timedelta(days=14)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="doctor_id" ref="doctor_jessica_adams"/>
+            <field name="patient_id" ref="patient_arya_stark"/>
+            <field name="state">completed</field>
+            <field name="symptoms">Fever, rash</field>
+            <field name="notes">Patient diagnosed with viral infection, prescribed rest and fluids.</field>
+        </record>
+
+        <record id="visit_10" model="hr_hospital.visit">
+            <field name="actual_date_time" eval="(datetime.now() - timedelta(days=9)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="planned_date_time" eval="(datetime.now() - timedelta(days=13)).strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="doctor_id" ref="doctor_jessica_adams"/>
+            <field name="patient_id" ref="patient_sansa_stark"/>
+            <field name="state">completed</field>
+            <field name="symptoms">Fatigue, muscle pain</field>
+            <field name="notes">Patient advised to rest and avoid physical exertion.</field>
+        </record>
+    </data>
+</odoo>

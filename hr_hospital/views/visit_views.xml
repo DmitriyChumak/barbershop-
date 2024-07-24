@@ -1,0 +1,107 @@
+<!--visit view-->
+<odoo>
+    <!-- tree-->
+    <record id="view_visit_tree" model="ir.ui.view">
+        <field name="name">hr_hospital.visit.tree</field>
+        <field name="model">hr_hospital.visit</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id"/>
+                <field name="actual_date_time"/>
+                <field name="state"/>
+                <field name="planned_date_time"/>
+                <field name="doctor_id"/>
+                <field name="patient_id"/>
+                <field name="symptoms"/>
+                <field name="diagnosis_ids"/>
+                <field name="notes"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- form -->
+    <record id="view_visit_form" model="ir.ui.view">
+        <field name="name">hr_hospital.visit.form</field>
+        <field name="model">hr_hospital.visit</field>
+        <field name="arch" type="xml">
+            <form string="Visit">
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="planned, completed, cancelled"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="actual_date_time"/>
+                        <field name="planned_date_time"/>
+                        <field name="doctor_id"/>
+                        <field name="patient_id"/>
+                        <field name="state"/>
+                        <field name="symptoms"/>
+                        <field name="diagnosis_ids" widget="many2many_tags"/>
+                        <field name="notes"/>
+                        <field name="visit_count" readonly="True"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- calendar view -->
+    <record id="view_visit_calendar" model="ir.ui.view">
+        <field name="name">visit.calendar</field>
+        <field name="model">hr_hospital.visit</field>
+        <field name="arch" type="xml">
+            <calendar string="Visits" color="doctor_id" date_start="planned_date_time">
+                <field name="planned_date_time"/>
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <field name="state"/>
+            </calendar>
+        </field>
+    </record>
+
+    <!-- Search bar -->
+    <record id="view_visit_search" model="ir.ui.view">
+        <field name="name">visit.search</field>
+        <field name="model">hr_hospital.visit</field>
+        <field name="arch" type="xml">
+            <search string="Visits">
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <filter string="Status" name="state"/>
+                <group expand="True" string="Group By">
+                    <filter name="filter_state" string="Status" context="{'group_by':'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Pivot table -->
+    <record id="view_visit_pivot" model="ir.ui.view">
+        <field name="name">visit.pivot</field>
+        <field name="model">hr_hospital.visit</field>
+        <field name="arch" type="xml">
+            <pivot string="Visits Analysis">
+                <field name="doctor_id" type="row"/>
+                <field name="state" type="col"/>
+                <field name="planned_date_time" interval="month" type="col"/>
+                <field name="visit_count" type="measure" string="Number of Visits" operator="sum"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Action definition for visit list view -->
+    <record id="action_visit" model="ir.actions.act_window">
+        <field name="name">Visits</field>
+        <field name="res_model">hr_hospital.visit</field>
+        <field name="view_mode">tree,form,calendar,pivot</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                                      (0, 0, {'view_mode': 'tree', 'view_id': ref('view_visit_tree')}),
+                                      (0, 0, {'view_mode': 'form', 'view_id': ref('view_visit_form')}),
+                                      (0, 0, {'view_mode': 'calendar', 'view_id': ref('view_visit_calendar')}),
+                                      (0, 0, {'view_mode': 'pivot', 'view_id': ref('view_visit_pivot')})]"/>
+        <field name="search_view_id" ref="view_visit_search"/>
+        <field name="context">{'search_default_filter_by_month': 1}</field>
+    </record>
+
+</odoo>

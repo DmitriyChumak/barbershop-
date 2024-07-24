@@ -1,0 +1,193 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* school_lesson_6_1
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-22 18:17+0000\n"
+"PO-Revision-Date: 2024-07-22 18:17+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,field_description:school_lesson_6_1.field_library_book__is_active
+msgid "Active"
+msgstr "Активний"
+
+#. module: school_lesson_6_1
+#: model:ir.ui.menu,name:school_lesson_6_1.library_book_categories_menu
+msgid "Book Categories"
+msgstr "Категорії книг"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,field_description:school_lesson_6_1.field_library_book_category__book_ids
+#: model:ir.ui.menu,name:school_lesson_6_1.library_books_menu
+msgid "Books"
+msgstr "Книги"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,help:school_lesson_6_1.field_library_book_category__book_ids
+msgid "Books in this category"
+msgstr "Книги в цій категорії"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,field_description:school_lesson_6_1.field_library_book__category_id
+#: model:ir.model.fields,field_description:school_lesson_6_1.field_library_book_category__name
+msgid "Category"
+msgstr "Категорія"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,help:school_lesson_6_1.field_library_book_category__name
+msgid "Category name"
+msgstr "Назва категорії"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,help:school_lesson_6_1.field_library_book__category_id
+msgid "Category of the book"
+msgstr "Категорія книги"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,field_description:school_lesson_6_1.field_library_book__checkout_date
+msgid "Checkout Date"
+msgstr "Дата видачі"
+
+#. module: school_lesson_6_1
+#: model_terms:ir.actions.act_window,help:school_lesson_6_1.library_book_action
+msgid "Create your first book"
+msgstr "Створіть свою першу книгу"
+
+#. module: school_lesson_6_1
+#: model_terms:ir.actions.act_window,help:school_lesson_6_1.library_book_category_action
+msgid "Create your first book category"
+msgstr "Створіть свою першу категорію книг"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,field_description:school_lesson_6_1.field_library_book__create_uid
+#: model:ir.model.fields,field_description:school_lesson_6_1.field_library_book_category__create_uid
+msgid "Created by"
+msgstr "Створено"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,field_description:school_lesson_6_1.field_library_book__create_date
+#: model:ir.model.fields,field_description:school_lesson_6_1.field_library_book_category__create_date
+msgid "Created on"
+msgstr "Створено"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,help:school_lesson_6_1.field_library_book__checkout_date
+msgid "Date when the book was checked out"
+msgstr "Дата видачі книги"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,help:school_lesson_6_1.field_library_book__return_date
+msgid "Date when the book was returned"
+msgstr "Дата повернення книги"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,field_description:school_lesson_6_1.field_library_book_category__description
+msgid "Description"
+msgstr "Опис"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,help:school_lesson_6_1.field_library_book_category__description
+msgid "Description of the category"
+msgstr "Опис категорії"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,field_description:school_lesson_6_1.field_library_book__display_name
+#: model:ir.model.fields,field_description:school_lesson_6_1.field_library_book_category__display_name
+msgid "Display Name"
+msgstr "Відображуване ім'я"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,field_description:school_lesson_6_1.field_library_book__id
+#: model:ir.model.fields,field_description:school_lesson_6_1.field_library_book_category__id
+msgid "ID"
+msgstr "Ідентифікатор"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,help:school_lesson_6_1.field_library_book__is_active
+msgid "Indicates if the book is active"
+msgstr "Вказує, чи книга активна"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,field_description:school_lesson_6_1.field_library_book__write_uid
+#: model:ir.model.fields,field_description:school_lesson_6_1.field_library_book_category__write_uid
+msgid "Last Updated by"
+msgstr "Останнє оновлення"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,field_description:school_lesson_6_1.field_library_book__write_date
+#: model:ir.model.fields,field_description:school_lesson_6_1.field_library_book_category__write_date
+msgid "Last Updated on"
+msgstr "Останнє оновлення"
+
+#. module: school_lesson_6_1
+#: model:ir.ui.menu,name:school_lesson_6_1.library_menu
+msgid "Library"
+msgstr "Бібліотека"
+
+#. module: school_lesson_6_1
+#: model:ir.model,name:school_lesson_6_1.model_library_book
+#: model_terms:ir.ui.view,arch_db:school_lesson_6_1.view_library_book_form
+msgid "Library Book"
+msgstr "Книга бібліотеки"
+
+#. module: school_lesson_6_1
+#: model:ir.actions.act_window,name:school_lesson_6_1.library_book_category_action
+#: model_terms:ir.ui.view,arch_db:school_lesson_6_1.view_library_book_category_tree
+msgid "Library Book Categories"
+msgstr "Категорії книг бібліотеки"
+
+#. module: school_lesson_6_1
+#: model:ir.model,name:school_lesson_6_1.model_library_book_category
+#: model_terms:ir.ui.view,arch_db:school_lesson_6_1.view_library_book_category_form
+msgid "Library Book Category"
+msgstr "Категорія книг бібліотеки"
+
+#. module: school_lesson_6_1
+#: model:ir.actions.act_window,name:school_lesson_6_1.library_book_action
+#: model_terms:ir.ui.view,arch_db:school_lesson_6_1.view_library_book_tree
+msgid "Library Books"
+msgstr "Книги бібліотеки"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,help:school_lesson_6_1.field_library_book__reader_id
+msgid "Partner who is reading the book"
+msgstr "Читач книги"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,field_description:school_lesson_6_1.field_library_book__reader_id
+msgid "Reader"
+msgstr "Читач"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,field_description:school_lesson_6_1.field_library_book__return_date
+msgid "Return Date"
+msgstr "Дата повернення"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,help:school_lesson_6_1.field_library_book__name
+msgid "The title of the book"
+msgstr "Назва книги"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,field_description:school_lesson_6_1.field_library_book__name
+msgid "Title"
+msgstr "Назва"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,field_description:school_lesson_6_1.field_library_book__user_id
+msgid "User"
+msgstr "Користувач"
+
+#. module: school_lesson_6_1
+#: model:ir.model.fields,help:school_lesson_6_1.field_library_book__user_id
+msgid "User responsible for the book"
+msgstr "Користувач, відповідальний за книгу"

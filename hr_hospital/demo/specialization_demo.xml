@@ -1,0 +1,51 @@
+<odoo>
+    <record id="specialization_diagnostician" model="hr_hospital.specialization">
+        <field name="name">Diagnostician</field>
+        <field name="description">Specializes in the diagnosis of complex medical cases.</field>
+    </record>
+
+    <record id="specialization_oncologist" model="hr_hospital.specialization">
+        <field name="name">Oncologist</field>
+        <field name="description">Specializes in the treatment of cancer.</field>
+    </record>
+
+    <record id="specialization_neurologist" model="hr_hospital.specialization">
+        <field name="name">Neurologist</field>
+        <field name="description">Specializes in the treatment of diseases of the nervous system.</field>
+    </record>
+
+    <record id="specialization_immunologist" model="hr_hospital.specialization">
+        <field name="name">Immunologist</field>
+        <field name="description">Specializes in the treatment of immune system disorders.</field>
+    </record>
+
+    <record id="specialization_cardiologist" model="hr_hospital.specialization">
+        <field name="name">Cardiologist</field>
+        <field name="description">Specializes in the treatment of heart diseases.</field>
+    </record>
+
+    <record id="specialization_surgeon" model="hr_hospital.specialization">
+        <field name="name">Surgeon</field>
+        <field name="description">Specializes in performing surgeries.</field>
+    </record>
+
+    <record id="specialization_plastic_surgeon" model="hr_hospital.specialization">
+        <field name="name">Plastic Surgeon</field>
+        <field name="description">Specializes in reconstructive and cosmetic surgeries.</field>
+    </record>
+
+    <record id="specialization_internal_medicine" model="hr_hospital.specialization">
+        <field name="name">Internal Medicine</field>
+        <field name="description">Specializes in the prevention, diagnosis, and treatment of adult diseases.</field>
+    </record>
+
+    <record id="specialization_rheumatologist" model="hr_hospital.specialization">
+        <field name="name">Rheumatologist</field>
+        <field name="description">Specializes in the treatment of rheumatic diseases and conditions.</field>
+    </record>
+
+    <record id="specialization_pulmonologist" model="hr_hospital.specialization">
+        <field name="name">Pulmonologist</field>
+        <field name="description">Specializes in the treatment of respiratory system diseases.</field>
+    </record>
+</odoo>

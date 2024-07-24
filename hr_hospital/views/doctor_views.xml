@@ -1,0 +1,169 @@
+<!-- doctor view-->
+<odoo>
+<!--    tree-->
+    <record id="view_doctor_tree" model="ir.ui.view">
+        <field name="name">hr_hospital.doctor.tree</field>
+        <field name="model">hr_hospital.doctor</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="birthdate"/>
+                <field name="specialization_id"/>
+                <field name="is_intern" string="Intern?"/>
+                <field name="phone"/>
+                <field name="gender"/>
+                <field name="address"/>
+                <field name="email"/>
+            </tree>
+        </field>
+    </record>
+
+<!--    form-->
+    <record id="view_doctor_form" model="ir.ui.view">
+        <field name="name">hr_hospital.doctor.form</field>
+        <field name="model">hr_hospital.doctor</field>
+        <field name="arch" type="xml">
+            <form string="Doctor">
+                <sheet>
+                    <group>
+<!--                        first row-->
+                        <group>
+                            <field name="first_name" required="True"/>
+                            <field name="last_name" required="True"/>
+                            <field name="birthdate" widget="datepicker"/>
+                            <field name="gender" widget="selection"/>
+                            <field name="phone" widget="phone"/>
+                            <field name="photo"/>
+                            <field name="address"/>
+                            <field name="email" widget="email"/>
+                        </group>
+<!--                        second row-->
+                        <group>
+                            <field name="name" readonly="True"/>
+                            <field name="age" readonly="True"/>
+                            <field name="specialization_id" widget="many2one"/>
+                            <field name="is_intern" string="Intern?" widget="boolean"/>
+                            <field name="mentor_id" string="Mentor" modifiers="{'invisible': [('is_intern', '=', False)]}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Personal Patients">
+                            <field name="personal_doctor_patient_ids"/>
+                        </page>
+                        <page string="Supervised Patients">
+                            <field name="supervised_doctor_patient_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search view -->
+    <record id="view_doctor_search" model="ir.ui.view">
+        <field name="name">doctor.search</field>
+        <field name="model">hr_hospital.doctor</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="specialization_id"/>
+                <filter string="Mentors" name="filter_mentors" domain="[('is_intern', '=', False)]"/>
+                <filter string="Interns" name="filter_interns" domain="[('is_intern', '=', True)]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Quick Visit Action -->
+    <record id="action_create_quick_visit" model="ir.actions.server">
+    <field name="name">Create Quick Visit</field>
+    <field name="model_id" ref="hr_hospital.model_hr_hospital_doctor"/>
+    <field name="binding_model_id" ref="hr_hospital.model_hr_hospital_doctor"/>
+    <field name="state">code</field>
+    <field name="code">
+if record:
+    action = {
+        'type': 'ir.actions.act_window',
+        'name': 'Create Visit',
+        'res_model': 'hr_hospital.visit',
+        'view_mode': 'form',
+        'context': {
+            'default_doctor_id': record.id,
+        },
+        'target': 'new',
+    }
+else:
+    action = {
+        'type': 'ir.actions.act_window',
+        'name': 'Create Visit',
+        'res_model': 'hr_hospital.visit',
+        'view_mode': 'form',
+        'context': {},
+        'target': 'new',
+    }
+    </field>
+</record>
+
+    <!-- Kanban view -->
+    <record id="view_doctor_kanban" model="ir.ui.view">
+        <field name="name">hr_hospital.doctor.kanban</field>
+        <field name="model">hr_hospital.doctor</field>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile" records_draggable="False" archivable="False">
+                <header>
+                    <button type="object" name="action_create_quick_visit" string="Create Visit" class="btn btn-primary"/>
+                </header>
+                <field name="specialization_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click o_kanban_record oe_kanban_#{record.is_intern.raw_value ? 'intern' : 'mentor'}" style="border: 1px solid #ddd; border-radius: 4px; padding: 10px; margin-bottom: 10px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); position: relative;">
+                            <div class="oe_kanban_content" style="display: flex; flex-direction: column;">
+                                <div class="oe_kanban_details" style="margin-bottom: 10px;">
+                                    <strong style="font-size: 16px;"><field name="first_name"/> <field name="last_name"/></strong>
+                                    <div style="font-size: 14px; color: #555;"><field name="specialization_id"/></div>
+                                    <div><field name="is_intern" invisible="1"/></div>
+
+                                    <t t-if="record.is_intern.raw_value">
+                                        <div class="oe_kanban_tag oe_tag_color_0" style="background-color: #ffc107; color: white; padding: 3px 5px; border-radius: 3px;">Intern</div>
+                                    </t>
+                                    <t t-elif="!record.is_intern.raw_value">
+                                        <div class="oe_kanban_tag oe_tag_color_1" style="background-color: #007bff; color: white; padding: 3px 5px; border-radius: 3px;">Mentor</div>
+                                    </t>
+
+                                    <!-- List of Interns if the doctor is a mentor -->
+                                    <t t-if="!record.is_intern.raw_value and record.intern_ids and record.intern_ids.count">
+                                        <div style="margin-top: 10px;">
+                                            <strong style="font-size: 14px;">Interns:</strong>
+                                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                                <t t-foreach="record.intern_ids.data" t-as="intern">
+                                                    <li style="font-size: 14px; color: #555;"><t t-esc="intern.display_name"/></li>
+                                                </t>
+                                            </ul>
+                                        </div>
+                                    </t>
+                                </div>
+                                <footer style="margin-top: auto; text-align: center;">
+                                    <button type="object" class="btn btn-primary" name="action_create_quick_visit" style="margin-top: 10px;">Quick Visit</button>
+                                </footer>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+
+
+    <!-- Action definition for doctor list view -->
+    <record id="action_doctor" model="ir.actions.act_window">
+        <field name="name">Doctors</field>
+        <field name="res_model">hr_hospital.doctor</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="view_id" ref="view_doctor_tree"/>
+        <field name="search_view_id" ref="view_doctor_search"/>
+    </record>
+
+</odoo>

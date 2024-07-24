@@ -1,0 +1,44 @@
+<odoo>
+    <record id="view_personal_doctor_wizard" model="ir.ui.view">
+        <field name="name">personal.doctor.wizard.form</field>
+        <field name="model">hr_hospital.personal.doctor.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Assign Personal Doctor">
+                <group>
+                    <field name="patient_ids" readonly="True"/>
+                    <field name="doctor_id"/>
+                </group>
+                <footer>
+                    <button name="assign_personal_doctor" type="object" string="Assign" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_personal_doctor_wizard" model="ir.actions.act_window">
+        <field name="name">Assign Personal Doctor</field>
+        <field name="res_model">hr_hospital.personal.doctor.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{'default_patient_ids': active_ids}</field>
+    </record>
+
+    <record id="patient_action_assign_personal_doctor" model="ir.actions.server">
+        <field name="name">Assign Personal Doctor</field>
+        <field name="model_id" ref="hr_hospital.model_hr_hospital_patient"/>
+        <field name="binding_model_id" ref="hr_hospital.model_hr_hospital_patient"/>
+        <field name="state">code</field>
+        <field name="code">
+action = {
+    'type': 'ir.actions.act_window',
+    'name': 'Assign Personal Doctor',
+    'res_model': 'hr_hospital.personal.doctor.wizard',
+    'view_mode': 'form',
+    'target': 'new',
+    'context': {'default_patient_ids': env.context.get('active_ids', [])},
+}
+        </field>
+    </record>
+
+</odoo>

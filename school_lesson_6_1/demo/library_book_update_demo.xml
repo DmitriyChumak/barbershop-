@@ -1,0 +1,13 @@
+<!--
+Updates to demo data for library.book model.
+This data includes modifications to example books and removal of specific records.
+-->
+<odoo>
+    <!-- Rename the book "Поклик предків" to "Зов предков" -->
+    <record id="book_call_of_the_wild" model="library.book">
+        <field name="name">Зов предков</field>
+    </record>
+
+    <!-- Remove the book "Двадцять тисяч льє під водою" -->
+    <record id="book_twenty_thousand_leagues" model="library.book"/>
+</odoo>

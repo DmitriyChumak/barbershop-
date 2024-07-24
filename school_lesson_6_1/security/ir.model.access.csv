@@ -1,0 +1,8 @@
+# ID,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+# Access rights for library.book.category model
+access_library_book_category_user,library.book.category user,model_library_book_category,base.group_user,1,0,0,0
+access_library_book_category_admin,library.book.category admin,model_library_book_category,base.group_system,1,1,1,1
+
+# Access rights for library.book model
+access_library_book_user,library.book user,model_library_book,base.group_user,1,0,0,0
+access_library_book_admin,library.book admin,model_library_book,base.group_system,1,1,1,1

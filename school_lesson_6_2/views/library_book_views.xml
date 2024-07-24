@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Inherit the existing tree view for library.book to add the author field -->
+    <!-- This record modifies the tree view for library.book to include the author_id field -->
+    <record id="view_library_book_tree_inherit" model="ir.ui.view">
+        <field name="name">library.book.tree.inherit</field>
+        <field name="model">library.book</field>
+        <field name="inherit_id" ref="school_lesson_6_1.view_library_book_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+                <field name="author_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Inherit the existing form view for library.book to add the author field -->
+    <!-- This record modifies the form view for library.book to include the author_id field -->
+    <record id="view_library_book_form_inherit" model="ir.ui.view">
+        <field name="name">library.book.form.inherit</field>
+        <field name="model">library.book</field>
+        <field name="inherit_id" ref="school_lesson_6_1.view_library_book_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group" position="inside">
+                <field name="author_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
