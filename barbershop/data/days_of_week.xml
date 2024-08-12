@@ -1,0 +1,31 @@
+<odoo>
+    <!-- Days of the Week -->
+    <record id="day_monday" model="barbershop.days.of.week">
+        <field name="name">Monday</field>
+        <field name="sequence">1</field>
+    </record>
+    <record id="day_tuesday" model="barbershop.days.of.week">
+        <field name="name">Tuesday</field>
+        <field name="sequence">2</field>
+    </record>
+    <record id="day_wednesday" model="barbershop.days.of.week">
+        <field name="name">Wednesday</field>
+        <field name="sequence">3</field>
+    </record>
+    <record id="day_thursday" model="barbershop.days.of.week">
+        <field name="name">Thursday</field>
+        <field name="sequence">4</field>
+    </record>
+    <record id="day_friday" model="barbershop.days.of.week">
+        <field name="name">Friday</field>
+        <field name="sequence">5</field>
+    </record>
+    <record id="day_saturday" model="barbershop.days.of.week">
+        <field name="name">Saturday</field>
+        <field name="sequence">6</field>
+    </record>
+    <record id="day_sunday" model="barbershop.days.of.week">
+        <field name="name">Sunday</field>
+        <field name="sequence">7</field>
+    </record>
+</odoo>

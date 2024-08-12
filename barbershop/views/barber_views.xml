@@ -1,0 +1,96 @@
+<odoo>
+    <data>
+        <!-- Inherit the existing search view to add a filter for barbers -->
+        <record id="view_employee_filter_barbershop" model="ir.ui.view">
+            <field name="name">hr.employee.search.barbershop</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_filter"/>
+            <field name="arch" type="xml">
+                <filter name="newly_hired" position="after">
+                    <filter name="is_barber" string="Barbers" domain="[('is_barber', '=', True)]"/>
+                </filter>
+            </field>
+        </record>
+
+        <!-- Inherit the existing form view to add fields and tabs for barbers -->
+        <record id="view_employee_form_barbershop" model="ir.ui.view">
+            <field name="name">hr.employee.form.barbershop</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/notebook" position="inside">
+                    <page string="Barbershop">
+                        <group>
+                            <field name="is_barber"/>
+                            <field name="specialization_ids" widget="many2many_tags"/>
+                            <field name="service_ids" widget="many2many_tags"/>
+                            <field name="bonus_percentage"/>
+                            <field name="appointment_ids" context="{'default_employee_id': active_id}" readonly="1">
+                                <tree>
+                                    <field name="date_time"/>
+                                    <field name="customer_id"/>
+                                    <field name="service_id"/>
+                                    <field name="state"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="date_time"/>
+                                        <field name="customer_id"/>
+                                        <field name="service_id"/>
+                                        <field name="state"/>
+                                    </group>
+                                </form>
+                            </field>
+                            <field name="bonus_ids" context="{'default_employee_id': active_id}" readonly="1">
+                                <tree>
+                                    <field name="amount"/>
+                                    <field name="date"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="amount"/>
+                                        <field name="date"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit the existing tree view to add a column for is_barber -->
+        <record id="view_employee_tree_barbershop" model="ir.ui.view">
+            <field name="name">hr.employee.tree.barbershop</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='name']" position="after">
+                    <field name="is_barber"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Create a new action for barbers -->
+        <record id="action_barbershop_employees" model="ir.actions.act_window">
+            <field name="name">Barbershop Employees</field>
+            <field name="res_model">hr.employee</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('is_barber', '=', True)]</field>
+            <field name="context">{'default_is_barber': 1}</field>
+        </record>
+
+        <!-- Add report action to the employee form view -->
+<!--        <record id="hr_employee_form_view_inherit_report" model="ir.ui.view">-->
+<!--            <field name="name">hr.employee.form.report.barbershop</field>-->
+<!--            <field name="model">hr.employee</field>-->
+<!--            <field name="inherit_id" ref="hr.view_employee_form"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//header" position="inside">-->
+<!--                    <button name="%(report_barber_load_action)d" string="Print Barber Load Report" type="action" class="oe_highlight"/>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+
+    </data>
+</odoo>

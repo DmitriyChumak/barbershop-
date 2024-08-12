@@ -1,0 +1,120 @@
+<odoo>
+    <!-- Tree view for Specializations -->
+    <record id="view_specialization_tree" model="ir.ui.view">
+        <field name="name">barbershop.specialization.tree</field>
+        <field name="model">barbershop.specialization</field>
+        <field name="arch" type="xml">
+            <tree string="Specializations">
+                <field name="category_id" string="Category Name" />
+                <field name="name"/>
+                <field name="barber_count" string="Number of Barbers"/>
+                <field name="service_count" string="Number of Services"/>
+                <field name="create_date" string="Created On" widget="datetime"/>
+                <field name="write_date" string="Last Updated" widget="datetime"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form view for Specializations -->
+    <record id="view_specialization_form" model="ir.ui.view">
+        <field name="name">barbershop.specialization.form</field>
+        <field name="model">barbershop.specialization</field>
+        <field name="arch" type="xml">
+            <form string="Specialization">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="category_id" placeholder="Select the category name"/>
+                            <field name="name" placeholder="Enter specialization name"/>
+                            <field name="employee_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                            <field name="service_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                            <field name="image" widget="image" class="oe_avatar"/>
+                        </group>
+                        <group>
+                            <field name="create_date" readonly="1" widget="datetime"/>
+                            <field name="write_date" readonly="1" widget="datetime"/>
+                            <field name="barber_count" readonly="1"/>
+                            <field name="service_count" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Description">
+                            <field name="description"/>
+                        </page>
+
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search view for Specializations -->
+    <record id="view_specialization_search" model="ir.ui.view">
+    <field name="name">barbershop.specialization.search</field>
+    <field name="model">barbershop.specialization</field>
+    <field name="arch" type="xml">
+        <search string="Specializations">
+            <field name="name" string="Name"/>
+            <field name="barber_count" string="Number of Barbers"/>
+            <field name="service_count" string="Number of Services"/>
+
+            <!-- Filters -->
+            <filter name="barbers_above_5" string="Barbers > 5" domain="[('barber_count', '>', 5)]"/>
+            <filter name="services_above_3" string="Services > 3" domain="[('service_count', '>', 3)]"/>
+
+            <!-- Group By -->
+            <group expand="0" string="Group By">
+                <filter name="group_by_category" string="Category" context="{'group_by':'category_id'}"/>
+                <filter name="group_by_create_date" string="Created Date" context="{'group_by':'create_date'}"/>
+                <filter name="group_by_write_date" string="Last Updated" context="{'group_by':'write_date'}"/>
+            </group>
+
+            <searchpanel>
+                <field name="category_id" string="Category"/>
+            </searchpanel>
+        </search>
+
+    </field>
+</record>
+
+    <!-- Graph view for Specializations -->
+    <record id="view_specialization_graph" model="ir.ui.view">
+        <field name="name">barbershop.specialization.graph</field>
+        <field name="model">barbershop.specialization</field>
+        <field name="arch" type="xml">
+            <graph string="Specializations Analysis">
+                <field name="barber_count" type="measure"/>
+                <field name="service_count" type="measure"/>
+                <field name="name" type="row"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- Pivot table for Specializations -->
+    <record id="view_specialization_pivot" model="ir.ui.view">
+        <field name="name">barbershop.specialization.pivot</field>
+        <field name="model">barbershop.specialization</field>
+        <field name="arch" type="xml">
+            <pivot string="Specializations Pivot">
+                <field name="barber_count" type="measure"/>
+                <field name="service_count" type="measure"/>
+                <field name="create_date" type="row"/>
+                <field name="name" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Action for Specializations -->
+    <record id="action_specialization" model="ir.actions.act_window">
+        <field name="name">Specializations</field>
+        <field name="res_model">barbershop.specialization</field>
+        <field name="view_mode">tree,form,graph,pivot</field>
+        <field name="search_view_id" ref="view_specialization_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first specialization
+            </p>
+        </field>
+    </record>
+</odoo>

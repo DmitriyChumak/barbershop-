@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Specializations for Haircut -->
+    <record id="specialization_men_cutting" model="barbershop.specialization">
+        <field name="name">Men's Cutting</field>
+        <field name="category_id" ref="specialization_category_haircut"/>
+        <field name="description">Specialization in cutting men's hair, including classic and modern styles.</field>
+    </record>
+
+    <record id="specialization_women_cutting" model="barbershop.specialization">
+        <field name="name">Women's Cutting</field>
+        <field name="category_id" ref="specialization_category_haircut"/>
+        <field name="description">Specialization in cutting women's hair, focusing on trends and precision.</field>
+    </record>
+
+    <record id="specialization_kids_cutting" model="barbershop.specialization">
+        <field name="name">Kids' Cutting</field>
+        <field name="category_id" ref="specialization_category_haircut"/>
+        <field name="description">Specialization in cutting kids' hair, creating fun and age-appropriate styles.</field>
+    </record>
+
+    <record id="specialization_fade_cutting" model="barbershop.specialization">
+        <field name="name">Fade Cutting</field>
+        <field name="category_id" ref="specialization_category_haircut"/>
+        <field name="description">Specialization in fade cutting techniques, popular among modern haircuts.</field>
+    </record>
+
+    <record id="specialization_curly_cutting" model="barbershop.specialization">
+        <field name="name">Curly Hair Cutting</field>
+        <field name="category_id" ref="specialization_category_haircut"/>
+        <field name="description">Specialization in cutting curly and textured hair, enhancing natural curls.</field>
+    </record>
+
+    <!-- Specializations for Shaving -->
+    <record id="specialization_classic_shaving" model="barbershop.specialization">
+        <field name="name">Classic Shaving</field>
+        <field name="category_id" ref="specialization_category_shaving"/>
+        <field name="description">Specialization in classic shaving techniques, using straight razors.</field>
+    </record>
+
+    <record id="specialization_beard_grooming" model="barbershop.specialization">
+        <field name="name">Beard Grooming</field>
+        <field name="category_id" ref="specialization_category_shaving"/>
+        <field name="description">Specialization in grooming and maintaining beards, from trimming to shaping.</field>
+    </record>
+
+    <record id="specialization_mustache_styling" model="barbershop.specialization">
+        <field name="name">Mustache Styling</field>
+        <field name="category_id" ref="specialization_category_shaving"/>
+        <field name="description">Specialization in styling mustaches, offering a variety of styles and shapes.</field>
+    </record>
+
+    <record id="specialization_hot_towel_shaving" model="barbershop.specialization">
+        <field name="name">Hot Towel Shaving</field>
+        <field name="category_id" ref="specialization_category_shaving"/>
+        <field name="description">Specialization in hot towel shaving, providing a luxurious shaving experience.</field>
+    </record>
+
+    <!-- Specializations for Hair Coloring -->
+    <record id="specialization_highlights_coloring" model="barbershop.specialization">
+        <field name="name">Highlights</field>
+        <field name="category_id" ref="specialization_category_coloring"/>
+        <field name="description">Specialization in highlights, adding depth and dimension to hair color.</field>
+    </record>
+
+    <record id="specialization_balayage_coloring" model="barbershop.specialization">
+        <field name="name">Balayage</field>
+        <field name="category_id" ref="specialization_category_coloring"/>
+        <field name="description">Specialization in balayage coloring technique, creating natural sun-kissed looks.</field>
+    </record>
+
+    <record id="specialization_ombre_coloring" model="barbershop.specialization">
+        <field name="name">Ombre</field>
+        <field name="category_id" ref="specialization_category_coloring"/>
+        <field name="description">Specialization in ombre coloring, blending colors from dark to light.</field>
+    </record>
+
+    <record id="specialization_root_touchup_coloring" model="barbershop.specialization">
+        <field name="name">Root Touch-Up</field>
+        <field name="category_id" ref="specialization_category_coloring"/>
+        <field name="description">Specialization in root touch-ups, maintaining consistent hair color.</field>
+    </record>
+
+    <record id="specialization_full_color_coloring" model="barbershop.specialization">
+        <field name="name">Full Hair Coloring</field>
+        <field name="category_id" ref="specialization_category_coloring"/>
+        <field name="description">Specialization in full hair coloring, covering the entire hair.</field>
+    </record>
+
+    <!-- Specializations for Hair Treatment -->
+    <record id="specialization_keratin_treatment" model="barbershop.specialization">
+        <field name="name">Keratin Treatment</field>
+        <field name="category_id" ref="specialization_category_treatment"/>
+        <field name="description">Specialization in keratin treatments, smoothing and strengthening hair.</field>
+    </record>
+
+    <record id="specialization_scalp_treatment" model="barbershop.specialization">
+        <field name="name">Scalp Treatment</field>
+        <field name="category_id" ref="specialization_category_treatment"/>
+        <field name="description">Specialization in scalp treatments, promoting healthy scalp and hair growth.</field>
+    </record>
+
+    <record id="specialization_deep_conditioning" model="barbershop.specialization">
+        <field name="name">Deep Conditioning</field>
+        <field name="category_id" ref="specialization_category_treatment"/>
+        <field name="description">Specialization in deep conditioning treatments, restoring moisture and shine.</field>
+    </record>
+
+    <record id="specialization_hair_mask_treatment" model="barbershop.specialization">
+        <field name="name">Hair Mask Treatment</field>
+        <field name="category_id" ref="specialization_category_treatment"/>
+        <field name="description">Specialization in hair mask treatments, targeting specific hair concerns.</field>
+    </record>
+
+    <record id="specialization_repair_treatment" model="barbershop.specialization">
+        <field name="name">Hair Repair Treatment</field>
+        <field name="category_id" ref="specialization_category_treatment"/>
+        <field name="description">Specialization in repairing damaged hair, bringing back strength and elasticity.</field>
+    </record>
+
+    <!-- Specializations for Hair Styling -->
+    <record id="specialization_updo_styling" model="barbershop.specialization">
+        <field name="name">Updos</field>
+        <field name="category_id" ref="specialization_category_styling"/>
+        <field name="description">Specialization in updos, perfect for weddings and special occasions.</field>
+    </record>
+
+    <record id="specialization_braiding_styling" model="barbershop.specialization">
+        <field name="name">Braiding</field>
+        <field name="category_id" ref="specialization_category_styling"/>
+        <field name="description">Specialization in braiding, offering various styles from simple to complex.</field>
+    </record>
+
+    <record id="specialization_curling_styling" model="barbershop.specialization">
+        <field name="name">Curling</field>
+        <field name="category_id" ref="specialization_category_styling"/>
+        <field name="description">Specialization in curling techniques, adding volume and bounce to hair.</field>
+    </record>
+
+    <record id="specialization_straightening_styling" model="barbershop.specialization">
+        <field name="name">Straightening</field>
+        <field name="category_id" ref="specialization_category_styling"/>
+        <field name="description">Specialization in straightening, creating sleek and smooth looks.</field>
+    </record>
+
+    <record id="specialization_texture_styling" model="barbershop.specialization">
+        <field name="name">Texturizing</field>
+        <field name="category_id" ref="specialization_category_styling"/>
+        <field name="description">Specialization in texturizing, enhancing natural hair texture.</field>
+    </record>
+
+    <!-- Specializations for Beard Care -->
+    <record id="specialization_beard_styling" model="barbershop.specialization">
+        <field name="name">Beard Styling</field>
+        <field name="category_id" ref="specialization_category_beard"/>
+        <field name="description">Specialization in beard styling, shaping beards to suit face shapes.</field>
+    </record>
+
+    <record id="specialization_beard_trim" model="barbershop.specialization">
+        <field name="name">Beard Trimming</field>
+        <field name="category_id" ref="specialization_category_beard"/>
+        <field name="description">Specialization in beard trimming, maintaining length and neatness.</field>
+    </record>
+
+    <record id="specialization_beard_color" model="barbershop.specialization">
+        <field name="name">Beard Coloring</field>
+        <field name="category_id" ref="specialization_category_beard"/>
+        <field name="description">Specialization in beard coloring, covering greys or changing beard color.</field>
+    </record>
+
+    <!-- Specializations for Nail Services -->
+    <record id="specialization_manicure" model="barbershop.specialization">
+        <field name="name">Manicure</field>
+        <field name="category_id" ref="specialization_category_nails"/>
+        <field name="description">Specialization in manicures, including nail shaping and polish.</field>
+    </record>
+
+    <record id="specialization_pedicure" model="barbershop.specialization">
+        <field name="name">Pedicure</field>
+        <field name="category_id" ref="specialization_category_nails"/>
+        <field name="description">Specialization in pedicures, including foot care and nail polish.</field>
+    </record>
+
+    <record id="specialization_nail_art" model="barbershop.specialization">
+        <field name="name">Nail Art</field>
+        <field name="category_id" ref="specialization_category_nails"/>
+        <field name="description">Specialization in nail art, offering creative and intricate designs.</field>
+    </record>
+
+    <record id="specialization_gel_nails" model="barbershop.specialization">
+        <field name="name">Gel Nails</field>
+        <field name="category_id" ref="specialization_category_nails"/>
+        <field name="description">Specialization in gel nails, providing long-lasting and durable nails.</field>
+    </record>
+
+    <!-- Specializations for Makeup -->
+    <record id="specialization_bride_makeup" model="barbershop.specialization">
+        <field name="name">Bridal Makeup</field>
+        <field name="category_id" ref="specialization_category_makeup"/>
+        <field name="description">Specialization in bridal makeup, creating flawless and long-lasting looks.</field>
+    </record>
+
+    <record id="specialization_event_makeup" model="barbershop.specialization">
+        <field name="name">Event Makeup</field>
+        <field name="category_id" ref="specialization_category_makeup"/>
+        <field name="description">Specialization in event makeup, perfect for parties and special occasions.</field>
+    </record>
+
+    <record id="specialization_natural_makeup" model="barbershop.specialization">
+        <field name="name">Natural Makeup</field>
+        <field name="category_id" ref="specialization_category_makeup"/>
+        <field name="description">Specialization in natural makeup looks, enhancing natural beauty.</field>
+    </record>
+
+    <record id="specialization_fashion_makeup" model="barbershop.specialization">
+        <field name="name">Fashion Makeup</field>
+        <field name="category_id" ref="specialization_category_makeup"/>
+        <field name="description">Specialization in fashion makeup, bold and creative looks for photoshoots.</field>
+    </record>
+
+    <!-- Specializations for Facial Treatment -->
+    <record id="specialization_deep_cleansing_facial" model="barbershop.specialization">
+        <field name="name">Deep Cleansing Facial</field>
+        <field name="category_id" ref="specialization_category_facial"/>
+        <field name="description">Specialization in deep cleansing facials, removing impurities and toxins.</field>
+    </record>
+
+    <record id="specialization_anti_aging_facial" model="barbershop.specialization">
+        <field name="name">Anti-Aging Facial</field>
+        <field name="category_id" ref="specialization_category_facial"/>
+        <field name="description">Specialization in anti-aging facials, reducing wrinkles and fine lines.</field>
+    </record>
+
+    <record id="specialization_acne_facial" model="barbershop.specialization">
+        <field name="name">Acne Treatment Facial</field>
+        <field name="category_id" ref="specialization_category_facial"/>
+        <field name="description">Specialization in acne treatment facials, targeting breakouts and acne scars.</field>
+    </record>
+
+    <record id="specialization_hydrating_facial" model="barbershop.specialization">
+        <field name="name">Hydrating Facial</field>
+        <field name="category_id" ref="specialization_category_facial"/>
+        <field name="description">Specialization in hydrating facials, restoring moisture to the skin.</field>
+    </record>
+
+    <!-- Specializations for Massage Therapy -->
+    <record id="specialization_swedish_massage" model="barbershop.specialization">
+        <field name="name">Swedish Massage</field>
+        <field name="category_id" ref="specialization_category_massage"/>
+        <field name="description">Specialization in Swedish massage, relaxing and rejuvenating the body.</field>
+    </record>
+
+    <record id="specialization_deep_tissue_massage" model="barbershop.specialization">
+        <field name="name">Deep Tissue Massage</field>
+        <field name="category_id" ref="specialization_category_massage"/>
+        <field name="description">Specialization in deep tissue massage, targeting deep muscle layers.</field>
+    </record>
+
+    <record id="specialization_hot_stone_massage" model="barbershop.specialization">
+        <field name="name">Hot Stone Massage</field>
+        <field name="category_id" ref="specialization_category_massage"/>
+        <field name="description">Specialization in hot stone massage, using heated stones for relaxation.</field>
+    </record>
+
+    <record id="specialization_reflexology_massage" model="barbershop.specialization">
+        <field name="name">Reflexology</field>
+        <field name="category_id" ref="specialization_category_massage"/>
+        <field name="description">Specialization in reflexology, focusing on pressure points in the feet.</field>
+    </record>
+
+    <record id="specialization_aromatherapy_massage" model="barbershop.specialization">
+        <field name="name">Aromatherapy Massage</field>
+        <field name="category_id" ref="specialization_category_massage"/>
+        <field name="description">Specialization in aromatherapy massage, using essential oils for relaxation.</field>
+    </record>
+
+</odoo>

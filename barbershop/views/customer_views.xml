@@ -1,0 +1,58 @@
+<odoo>
+    <record id="view_customer_form_barbershop" model="ir.ui.view">
+        <field name="name">res.partner.form.barbershop</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/notebook/page[@name='sales_purchases']" position="after">
+                <page string="Barbershop">
+                    <group>
+                        <field name="is_barbershop_customer"/>
+                        <field name="last_visit_date"/>
+                        <field name="total_spent"/>
+
+                        <field name="appointment_ids" context="{'default_customer_id': active_id}" readonly="1">
+                            <tree>
+                                <field name="date_time"/>
+                                <field name="employee_id"/>
+                                <field name="service_id"/>
+                                <field name="state"/>
+                            </tree>
+                            <form>
+                                <group>
+                                    <field name="date_time"/>
+                                    <field name="employee_id"/>
+                                    <field name="service_id"/>
+                                    <field name="state"/>
+                                </group>
+                            </form>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_customer_tree_barbershop" model="ir.ui.view">
+        <field name="name">res.partner.tree.barbershop</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+                <field name="is_barbershop_customer"/>
+                <field name="last_visit_date"/>
+                <field name="total_spent"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_barbershop_customers" model="ir.actions.act_window">
+        <field name="name">Barbershop Customers</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('is_barbershop_customer', '=', True)]</field>
+        <field name="context">{'default_is_barbershop_customer': 1}</field>
+    </record>
+
+
+</odoo>

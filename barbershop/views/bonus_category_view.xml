@@ -1,0 +1,114 @@
+<odoo>
+    <!-- Tree view for Bonus Categories -->
+    <record id="view_bonus_category_tree" model="ir.ui.view">
+        <field name="name">barbershop.bonus.category.tree</field>
+        <field name="model">barbershop.bonus.category</field>
+        <field name="arch" type="xml">
+            <tree string="Bonus Categories" decoration-danger="not active">
+                <field name="name"/>
+                <field name="active"/>
+                <field name="create_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form view for Bonus Categories -->
+    <record id="view_bonus_category_form" model="ir.ui.view">
+        <field name="name">barbershop.bonus.category.form</field>
+        <field name="model">barbershop.bonus.category</field>
+        <field name="arch" type="xml">
+            <form string="Bonus Category">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="active"/>
+                        <field name="create_date" readonly="True"/>
+                    </group>
+                    <notebook>
+                        <page name="Description">
+                            <field name="description"/>
+                        </page>
+                        <page name="Bonuses">
+                            <field name="bonus_ids" context="{'default_category_id': active_id}">
+                            <tree string="Bonuses">
+                                <field name="employee_id"/>
+                                <field name="amount"/>
+                                <field name="date"/>
+                            </tree>
+                        </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search view for Bonus Categories -->
+    <record id="view_bonus_category_search" model="ir.ui.view">
+        <field name="name">barbershop.bonus.category.search</field>
+        <field name="model">barbershop.bonus.category</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="active"/>
+                <filter name="Active Categories" domain="[('active', '=', True)]"/>
+                <group expand="0" string="Group By">
+                    <filter name="Active" context="{'group_by':'active'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Kanban view for Bonus Categories -->
+    <record id="view_bonus_category_kanban" model="ir.ui.view">
+        <field name="name">barbershop.bonus.category.kanban</field>
+        <field name="model">barbershop.bonus.category</field>
+        <field name="arch" type="xml">
+            <kanban string="Bonus Categories">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record">
+                            <div class="o_kanban_details">
+                                <strong><field name="name"/></strong>
+                                <div><field name="description"/></div>
+                                <div><field name="active"/></div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Graph view for Bonus Categories -->
+    <record id="view_bonus_category_graph" model="ir.ui.view">
+        <field name="name">barbershop.bonus.category.graph</field>
+        <field name="model">barbershop.bonus.category</field>
+        <field name="arch" type="xml">
+            <graph string="Bonus Categories">
+                <field name="name" type="row"/>
+                <field name="active" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- Pivot view for Bonus Categories -->
+    <record id="view_bonus_category_pivot" model="ir.ui.view">
+        <field name="name">barbershop.bonus.category.pivot</field>
+        <field name="model">barbershop.bonus.category</field>
+        <field name="arch" type="xml">
+            <pivot string="Bonus Categories">
+                <field name="name" type="row"/>
+                <field name="active" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Action for Bonus Categories -->
+    <record id="action_bonus_categories" model="ir.actions.act_window">
+        <field name="name">Bonus Categories</field>
+        <field name="res_model">barbershop.bonus.category</field>
+        <field name="view_mode">tree,form,kanban,graph,pivot</field>
+        <field name="search_view_id" ref="view_bonus_category_search"/>
+    </record>
+</odoo>

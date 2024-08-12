@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <menuitem id="menu_barbershop_root" name="Barbershop" sequence="10"/>
+        <menuitem id="menu_salon_customer" name="Customers" parent="menu_barbershop_root" action="action_barbershop_customers" sequence="10"/>
+        <menuitem id="menu_salon_barber" name="Barbers" parent="menu_barbershop_root" action="action_barbershop_employees" sequence="20"/>
+        <menuitem id="menu_bonuses" name="Bonuses" parent="menu_barbershop_root" action="action_bonuses" sequence="30"/>
+        <menuitem id="menu_services" name="Services" parent="menu_barbershop_root" action="action_services"/>
+        <menuitem id="menu_reminders" name="Reminders" parent="menu_barbershop_root" action="action_reminders"/>
+        <menuitem id="menu_appointments" name="Appointments" parent="menu_barbershop_root" action="action_appointments"/>
+        <menuitem id="menu_specialization" name="Specializations" parent="menu_barbershop_root" action="action_specialization" sequence="10"/>
+        <menuitem id="menu_bonus_category" name="Bonus Categories" parent="menu_barbershop_root" action="action_bonus_categories"/>
+        <menuitem id="menu_work_schedules" name="Work Schedules" parent="menu_barbershop_root" action="action_work_schedules"/>
+<!--        <menuitem id="menu_breaks" name="Breaks" parent="menu_barbershop_root" action="action_breaks"/>-->
+        <menuitem id="menu_holidays" name="Holidays" parent="menu_barbershop_root" action="action_holidays"/>
+        <menuitem id="menu_specialization_category" name="Specialization Categories" parent="menu_barbershop_root" action="barbershop.action_specialization_category"/>
+    </data>
+</odoo>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Demo data for Specialization Categories -->
+    <record id="specialization_category_haircut" model="barbershop.specialization.category">
+        <field name="name">Haircut</field>
+        <field name="description">Specializations related to haircutting and styling.</field>
+    </record>
+
+    <record id="specialization_category_shaving" model="barbershop.specialization.category">
+        <field name="name">Shaving</field>
+        <field name="description">Specializations focused on shaving and beard grooming.</field>
+    </record>
+
+    <record id="specialization_category_coloring" model="barbershop.specialization.category">
+        <field name="name">Hair Coloring</field>
+        <field name="description">Specializations in hair coloring and dyeing techniques.</field>
+    </record>
+
+    <record id="specialization_category_treatment" model="barbershop.specialization.category">
+        <field name="name">Hair Treatment</field>
+        <field name="description">Specializations in various hair treatment services.</field>
+    </record>
+
+    <record id="specialization_category_styling" model="barbershop.specialization.category">
+        <field name="name">Hair Styling</field>
+        <field name="description">Specializations focused on hair styling and updos.</field>
+    </record>
+
+    <record id="specialization_category_beard" model="barbershop.specialization.category">
+        <field name="name">Beard Care</field>
+        <field name="description">Specializations in beard trimming, grooming, and maintenance.</field>
+    </record>
+
+    <record id="specialization_category_nails" model="barbershop.specialization.category">
+        <field name="name">Nail Services</field>
+        <field name="description">Specializations related to manicure and pedicure services.</field>
+    </record>
+
+    <record id="specialization_category_makeup" model="barbershop.specialization.category">
+        <field name="name">Makeup</field>
+        <field name="description">Specializations in professional makeup services.</field>
+    </record>
+
+    <record id="specialization_category_facial" model="barbershop.specialization.category">
+        <field name="name">Facial Treatment</field>
+        <field name="description">Specializations in facial treatments and skincare.</field>
+    </record>
+
+    <record id="specialization_category_massage" model="barbershop.specialization.category">
+        <field name="name">Massage Therapy</field>
+        <field name="description">Specializations in various massage techniques for relaxation and therapy.</field>
+    </record>
+</odoo>

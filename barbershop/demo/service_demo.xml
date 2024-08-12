@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Services for Cutting Specialization -->
+    <record id="service_mens_haircut" model="barbershop.service">
+        <field name="name">Men's Haircut</field>
+        <field name="duration">1.0</field>
+        <field name="price">20.0</field>
+        <field name="gender">male</field>
+        <field name="description">A classic haircut for men, including wash and style.</field>
+        <field name="specialization_ids" eval="[(6, 0, [ref('specialization_men_cutting')])]"/>
+        <field name="image" eval="False"/>
+    </record>
+
+    <record id="service_womens_haircut" model="barbershop.service">
+        <field name="name">Women's Haircut</field>
+        <field name="duration">1.5</field>
+        <field name="price">35.0</field>
+        <field name="gender">female</field>
+        <field name="description">A stylish haircut for women, including consultation, wash, and blow-dry.</field>
+        <field name="specialization_ids" eval="[(6, 0, [ref('specialization_women_cutting')])]"/>
+        <field name="image" eval="False"/>
+    </record>
+
+    <record id="service_kids_haircut" model="barbershop.service">
+        <field name="name">Kids' Haircut</field>
+        <field name="duration">0.75</field>
+        <field name="price">15.0</field>
+        <field name="gender">unisex</field>
+        <field name="description">A fun and friendly haircut for kids.</field>
+        <field name="specialization_ids" eval="[(6, 0, [ref('specialization_kids_cutting')])]"/>
+        <field name="image" eval="False"/>
+    </record>
+
+    <record id="service_fade_haircut" model="barbershop.service">
+        <field name="name">Fade Haircut</field>
+        <field name="duration">1.25</field>
+        <field name="price">25.0</field>
+        <field name="gender">male</field>
+        <field name="description">A modern fade haircut for men.</field>
+        <field name="specialization_ids" eval="[(6, 0, [ref('specialization_fade_cutting')])]"/>
+        <field name="image" eval="False"/>
+    </record>
+
+    <record id="service_curly_haircut" model="barbershop.service">
+        <field name="name">Curly Haircut</field>
+        <field name="duration">1.5</field>
+        <field name="price">30.0</field>
+        <field name="gender">unisex</field>
+        <field name="description">A haircut specialized for curly hair, enhancing natural curls.</field>
+        <field name="specialization_ids" eval="[(6, 0, [ref('specialization_curly_cutting')])]"/>
+        <field name="image" eval="False"/>
+    </record>
+
+    <!-- Services for Shaving Specialization -->
+    <record id="service_classic_shave" model="barbershop.service">
+        <field name="name">Classic Shave</field>
+        <field name="duration">0.5</field>
+        <field name="price">15.0</field>
+        <field name="gender">male</field>
+        <field name="description">A classic shave with a straight razor, including a hot towel treatment.</field>
+        <field name="specialization_ids" eval="[(6, 0, [ref('specialization_classic_shaving')])]"/>
+        <field name="image" eval="False"/>
+    </record>
+
+    <record id="service_beard_grooming" model="barbershop.service">
+        <field name="name">Beard Grooming</field>
+        <field name="duration">0.5</field>
+        <field name="price">10.0</field>
+        <field name="gender">male</field>
+        <field name="description">Beard trimming and grooming service to keep your beard looking sharp.</field>
+        <field name="specialization_ids" eval="[(6, 0, [ref('specialization_beard_grooming')])]"/>
+        <field name="image" eval="False"/>
+    </record>
+
+    <record id="service_mustache_styling" model="barbershop.service">
+        <field name="name">Mustache Styling</field>
+        <field name="duration">0.25</field>
+        <field name="price">5.0</field>
+        <field name="gender">male</field>
+        <field name="description">Mustache trimming and styling for a sharp look.</field>
+        <field name="specialization_ids" eval="[(6, 0, [ref('specialization_mustache_styling')])]"/>
+        <field name="image" eval="False"/>
+    </record>
+
+    <record id="service_hot_towel_shave" model="barbershop.service">
+        <field name="name">Hot Towel Shave</field>
+        <field name="duration">0.75</field>
+        <field name="price">18.0</field>
+        <field name="gender">male</field>
+        <field name="description">A luxurious hot towel shave for a clean and smooth finish.</field>
+        <field name="specialization_ids" eval="[(6, 0, [ref('specialization_hot_towel_shaving')])]"/>
+        <field name="image" eval="False"/>
+    </record>
+
+    <!-- Services for Coloring Specialization -->
+    <record id="service_highlights" model="barbershop.service">
+        <field name="name">Highlights</field>
+        <field name="duration">2.0</field>
+        <field name="price">50.0</field>
+        <field name="gender">unisex</field>
+        <field name="description">Adding highlights to your hair for depth and dimension.</field>
+        <field name="specialization_ids" eval="[(6, 0, [ref('specialization_highlights_coloring')])]"/>
+        <field name="image" eval="False"/>
+    </record>
+
+    <record id="service_balayage" model="barbershop.service">
+        <field name="name">Balayage</field>
+        <field name="duration">3.0</field>
+        <field name="price">70.0</field>
+        <field name="gender">unisex</field>
+        <field name="description">A hand-painted balayage service for a natural, sun-kissed look.</field>
+        <field name="specialization_ids" eval="[(6, 0, [ref('specialization_balayage_coloring')])]"/>
+        <field name="image" eval="False"/>
+    </record>
+
+    <record id="service_ombre" model="barbershop.service">
+        <field name="name">Ombre</field>
+        <field name="duration">2.5</field>
+        <field name="price">60.0</field>
+        <field name="gender">unisex</field>
+        <field name="description">Ombre coloring to blend hair from dark to light shades.</field>
+        <field name="specialization_ids" eval="[(6, 0, [ref('specialization_ombre_coloring')])]"/>
+        <field name="image" eval="False"/>
+    </record>
+
+    <record id="service_root_touch_up" model="barbershop.service">
+        <field name="name">Root Touch-Up</field>
+        <field name="duration">1.5</field>
+        <field name="price">40.0</field>
+        <field name="gender">unisex</field>
+        <field name="description">Touching up the roots to match the rest of your hair color.</field>
+        <field name="specialization_ids" eval="[(6, 0, [ref('specialization_root_touchup_coloring')])]"/>
+        <field name="image" eval="False"/>
+    </record>
+
+    <record id="service_gray_coverage" model="barbershop.service">
+        <field name="name">Gray Coverage</field>
+        <field name="duration">1.5</field>
+        <field name="price">45.0</field>
+        <field name="gender">unisex</field>
+        <field name="description">Covering gray hair with a natural and long-lasting color.</field>
+        <field name="specialization_ids" eval="[(6, 0, [ref('specialization_full_color_coloring')])]"/>
+        <field name="image" eval="False"/>
+    </record>
+
+    <!-- Services for Hair Treatment Specialization -->
+    <record id="service_keratin_treatment" model="barbershop.service">
+        <field name="name">Keratin Treatment</field>
+        <field name="duration">2.5</field>
+        <field name="price">80.0</field>
+        <field name="gender">unisex</field>
+        <field name="description">A smoothing keratin treatment for frizz-free hair.</field>
+        <field name="specialization_ids" eval="[(6, 0, [ref('specialization_keratin_treatment')])]"/>
+        <field name="image" eval="False"/>
+    </record>
+
+    <record id="service_scalp_treatment" model="barbershop.service">
+        <field name="name">Scalp Treatment</field>
+        <field name="duration">1.5</field>
+        <field name="price">45.0</field>
+        <field name="gender">unisex</field>
+        <field name="description">A treatment focused on cleansing and nourishing the scalp.</field>
+        <field name="specialization_ids" eval="[(6, 0, [ref('specialization_scalp_treatment')])]"/>
+        <field name="image" eval="False"/>
+    </record>
+
+    <record id="service_deep_conditioning" model="barbershop.service">
+        <field name="name">Deep Conditioning</field>
+        <field name="duration">1.0</field>
+        <field name="price">35.0</field>
+        <field name="gender">unisex</field>
+        <field name="description">A deep conditioning treatment to restore moisture and shine to hair.</field>
+        <field name="specialization_ids" eval="[(6, 0, [ref('specialization_deep_conditioning')])]"/>
+        <field name="image" eval="False"/>
+    </record>
+
+    <record id="service_olaplex_treatment" model="barbershop.service">
+        <field name="name">Olaplex Treatment</field>
+        <field name="duration">1.0</field>
+        <field name="price">50.0</field>
+        <field name="gender">unisex</field>
+        <field name="description">A restorative Olaplex treatment for damaged hair.</field>
+        <field name="specialization_ids" eval="[(6, 0, [ref('specialization_keratin_treatment')])]"/>
+        <field name="image" eval="False"/>
+    </record>
+
+    <record id="service_scalp_detox" model="barbershop.service">
+        <field name="name">Scalp Detox</field>
+        <field name="duration">1.0</field>
+        <field name="price">40.0</field>
+        <field name="gender">unisex</field>
+        <field name="description">A detoxifying treatment to cleanse and purify the scalp.</field>
+        <field name="specialization_ids" eval="[(6, 0, [ref('specialization_scalp_treatment')])]"/>
+        <field name="image" eval="False"/>
+    </record>
+
+</odoo>

@@ -1,0 +1,42 @@
+<odoo>
+    <data>
+        <!-- Rule: Customer can only access their own appointments -->
+        <record id="rule_appointment_customer" model="ir.rule">
+            <field name="name">Customer: Own Appointments</field>
+            <field name="model_id" ref="model_barbershop_appointment"/>
+            <field name="domain_force">[('customer_id', '=', user.partner_id.id)]</field>
+            <field name="groups" eval="[(4, ref('barbershop.group_barbershop_customer'))]"/>
+        </record>
+
+        <!-- Rule: Barber can access all appointments, their own customers, and their own records -->
+        <record id="rule_appointment_barber" model="ir.rule">
+            <field name="name">Barber: All Appointments</field>
+            <field name="model_id" ref="model_barbershop_appointment"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('barbershop.group_barbershop_barber'))]"/>
+        </record>
+
+        <record id="rule_customer_barber" model="ir.rule">
+            <field name="name">Barber: All Customers</field>
+            <field name="model_id" ref="model_res_partner"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('barbershop.group_barbershop_barber'))]"/>
+        </record>
+
+        <record id="rule_employee_barber" model="ir.rule">
+            <field name="name">Barber: All Barbers</field>
+            <field name="model_id" ref="model_hr_employee"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('barbershop.group_barbershop_barber'))]"/>
+        </record>
+
+        <!-- Rule: Manager has full access -->
+        <record id="rule_appointment_manager" model="ir.rule">
+            <field name="name">Manager: Full Access</field>
+            <field name="model_id" ref="model_barbershop_appointment"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('barbershop.group_barbershop_manager'))]"/>
+        </record>
+
+    </data>
+</odoo>

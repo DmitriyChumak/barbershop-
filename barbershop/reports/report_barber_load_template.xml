@@ -1,0 +1,28 @@
+<odoo>
+    <!-- Report template -->
+    <template id="report_barber_load_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t >
+                    <div class="page">
+<!--                        <h2>Barber Load Report</h2>-->
+<!--                        <p>Barber: <t t-esc="doc.id"/></p>-->
+<!--                        <p>Name: <t t-esc=""/>doc.is_barber</p>-->
+<!--                        <p>Number of Appointments: <t t-esc="doc.appointment_count"/></p>-->
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <!-- Report action -->
+    <record id="action_report_barber_load" model="ir.actions.report">
+        <field name="name">Barber Load Report</field>
+        <field name="model">report.barber.load</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">barbershop.report_barber_load_template</field>
+        <field name="report_file">barbershop.report_barber_load_template</field>
+        <field name="binding_model_id" ref="hr.model_hr_employee"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

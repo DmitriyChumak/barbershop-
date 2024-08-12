@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Creating a new category for the Barbershop module -->
+        <record id="category_barbershop" model="ir.module.category">
+            <field name="name">Barbershop</field>
+            <field name="description">User access levels for the Barbershop module</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <!-- Creating a Customer group -->
+        <record id="group_barbershop_customer" model="res.groups">
+            <field name="name">Customer</field>
+            <field name="category_id" ref="category_barbershop"/>
+            <field name="comment">Customers of the Barbershop</field>
+        </record>
+
+        <!-- Creating a Barber group -->
+        <record id="group_barbershop_barber" model="res.groups">
+            <field name="name">Barber</field>
+            <field name="category_id" ref="category_barbershop"/>
+            <field name="implied_ids" eval="[(4, ref('barbershop.group_barbershop_customer'))]"/>
+            <field name="comment">Barbers in the Barbershop</field>
+        </record>
+
+        <!-- Creating a Manager group -->
+        <record id="group_barbershop_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="category_barbershop"/>
+            <field name="implied_ids" eval="[(4, ref('barbershop.group_barbershop_barber'))]"/>
+            <field name="users" eval="[Command.link(ref('base.user_root')), Command.link(ref('base.user_admin'))]"/>
+            <field name="comment">Managers of the Barbershop (full rights)</field>
+        </record>
+
+    </data>
+</odoo>
