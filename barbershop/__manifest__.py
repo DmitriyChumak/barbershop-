@@ -22,7 +22,6 @@
         'views/appointment_views.xml',
         'views/specialization_views.xml',
         'views/bonus_category_view.xml',
-        # 'views/barber_break_views.xml', #I can delete it
         'views/barber_holiday_views.xml',
         'views/barber_work_schedule_views.xml',
         'views/specialization_category.xml',
@@ -41,6 +40,7 @@
         'demo/specialization_category_demo.xml',
         'demo/specialization_demo.xml',
         'demo/service_demo.xml',
+        'demo/bonus_category_demo.xml',
     ],
     'installable': True,
     'application': True,

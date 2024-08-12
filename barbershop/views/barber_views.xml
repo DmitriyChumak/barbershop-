@@ -67,6 +67,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//tree/field[@name='name']" position="after">
                     <field name="is_barber"/>
+                    <field name="is_administrator"/>
                 </xpath>
             </field>
         </record>

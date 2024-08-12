@@ -46,6 +46,18 @@ class Appointment(models.Model):
         comodel_name='calendar.event',
         string='Calendar Event'
     )
+    service_cost = fields.Float(
+        string='Service Cost',
+        compute='_compute_service_cost',
+        store=True,
+        help='The cost of the service for this appointment.'
+    )
+    service_duration = fields.Float(
+        string='Service Duration',
+        compute='_compute_service_duration',
+        store=True,
+        help='The cost of the service for this appointment.'
+    )
 
     REMINDER_BARBER_MINUTES = 15
     REMINDER_CUSTOMER_HOURS = 2
@@ -204,3 +216,19 @@ class Appointment(models.Model):
         Action to set the state to 'cancelled'.
         """
         self.change_state('cancelled')
+
+    @api.depends('service_id')
+    def _compute_service_cost(self):
+        for record in self:
+            if record.service_id:
+                record.service_cost = record.service_id.price
+            else:
+                record.service_cost = 0.0
+
+    @api.depends('service_id')
+    def _compute_service_duration(self):
+        for record in self:
+            if record.service_id:
+                record.service_duration = record.service_id.duration
+            else:
+                record.service_duration = 0.0

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Demo data for Bonus Categories -->
+    <record id="bonus_category_performance" model="barbershop.bonus.category">
+        <field name="name">Performance Bonus</field>
+        <field name="description">Bonus awarded for outstanding performance and achieving set targets.</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="bonus_category_attendance" model="barbershop.bonus.category">
+        <field name="name">Attendance Bonus</field>
+        <field name="description">Bonus given for excellent attendance records and punctuality.</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="bonus_category_customer_service" model="barbershop.bonus.category">
+        <field name="name">Customer Service Bonus</field>
+        <field name="description">Bonus for exceptional customer service and client satisfaction.</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="bonus_category_teamwork" model="barbershop.bonus.category">
+        <field name="name">Teamwork Bonus</field>
+        <field name="description">Bonus for excellent teamwork and collaboration within the barbershop.</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="bonus_category_innovation" model="barbershop.bonus.category">
+        <field name="name">Innovation Bonus</field>
+        <field name="description">Bonus for creative and innovative ideas that improve the barbershop's services.</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="bonus_category_sales" model="barbershop.bonus.category">
+        <field name="name">Sales Bonus</field>
+        <field name="description">Bonus for achieving and surpassing sales targets.</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="bonus_category_loyalty" model="barbershop.bonus.category">
+        <field name="name">Loyalty Bonus</field>
+        <field name="description">Bonus for long-term commitment and loyalty to the barbershop.</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="bonus_category_referral" model="barbershop.bonus.category">
+        <field name="name">Referral Bonus</field>
+        <field name="description">Bonus for referring new clients to the barbershop.</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="bonus_category_quality" model="barbershop.bonus.category">
+        <field name="name">Quality Bonus</field>
+        <field name="description">Bonus for maintaining high quality standards in services provided.</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="bonus_category_special_project" model="barbershop.bonus.category">
+        <field name="name">Special Project Bonus</field>
+        <field name="description">Bonus for successful completion of special projects or initiatives.</field>
+        <field name="active">True</field>
+    </record>
+</odoo>

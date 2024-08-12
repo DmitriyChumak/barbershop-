@@ -1,6 +1,6 @@
 from . import customer
-from . import appointment
 from . import service
+from . import appointment
 from . import barber
 from . import barber_break
 from . import barber_holiday
@@ -11,3 +11,4 @@ from . import bonus_category
 from . import reminder
 from . import specialization
 from . import specialization_category
+

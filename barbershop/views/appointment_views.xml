@@ -31,6 +31,8 @@
                         <field name="customer_id" />
                         <field name="employee_id"/>
                         <field name="service_id"/>
+                        <field name="service_cost"/>
+                        <field name="service_duration"/>
                         <field name="state"/>
                         <field name="date_time" />
                         <field name="notes"/>
@@ -61,11 +63,25 @@
         </field>
     </record>
 
+    <record id="view_appointment_pivot" model="ir.ui.view">
+        <field name="name">barbershop.appointment.pivot</field>
+        <field name="model">barbershop.appointment</field>
+        <field name="arch" type="xml">
+            <pivot string="Appointments">
+                <field name="date_time" type="cal"/>
+                <field name="employee_id" type="row"/>
+                <field name="service_id" type="measure" string="Appointment count" sum="1"/>
+                <field name="service_cost" type="measure" string="Total Cost" sum="1"/>
+                <field name="service_duration" type="measure" string="Total Duration" sum="1"/>
+            </pivot>
+        </field>
+    </record>
+
     <!-- Action for Appointments -->
     <record id="action_appointments" model="ir.actions.act_window">
         <field name="name">Appointments</field>
         <field name="res_model">barbershop.appointment</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,pivot</field>
         <field name="context">{}</field>
     </record>
 

@@ -1,17 +1,32 @@
 <odoo>
     <data>
+        <!-- Root menu -->
         <menuitem id="menu_barbershop_root" name="Barbershop" sequence="10"/>
-        <menuitem id="menu_salon_customer" name="Customers" parent="menu_barbershop_root" action="action_barbershop_customers" sequence="10"/>
-        <menuitem id="menu_salon_barber" name="Barbers" parent="menu_barbershop_root" action="action_barbershop_employees" sequence="20"/>
-        <menuitem id="menu_bonuses" name="Bonuses" parent="menu_barbershop_root" action="action_bonuses" sequence="30"/>
-        <menuitem id="menu_services" name="Services" parent="menu_barbershop_root" action="action_services"/>
-        <menuitem id="menu_reminders" name="Reminders" parent="menu_barbershop_root" action="action_reminders"/>
-        <menuitem id="menu_appointments" name="Appointments" parent="menu_barbershop_root" action="action_appointments"/>
-        <menuitem id="menu_specialization" name="Specializations" parent="menu_barbershop_root" action="action_specialization" sequence="10"/>
-        <menuitem id="menu_bonus_category" name="Bonus Categories" parent="menu_barbershop_root" action="action_bonus_categories"/>
-        <menuitem id="menu_work_schedules" name="Work Schedules" parent="menu_barbershop_root" action="action_work_schedules"/>
-<!--        <menuitem id="menu_breaks" name="Breaks" parent="menu_barbershop_root" action="action_breaks"/>-->
-        <menuitem id="menu_holidays" name="Holidays" parent="menu_barbershop_root" action="action_holidays"/>
-        <menuitem id="menu_specialization_category" name="Specialization Categories" parent="menu_barbershop_root" action="barbershop.action_specialization_category"/>
+
+        <!-- Customers and Barbers -->
+        <menuitem id="menu_barbershop_management" name="Management" parent="menu_barbershop_root" sequence="10"/>
+        <menuitem id="menu_salon_customer" name="Customers" parent="menu_barbershop_management" action="action_barbershop_customers" sequence="10"/>
+        <menuitem id="menu_salon_barber" name="Barbers" parent="menu_barbershop_management" action="action_barbershop_employees" sequence="20"/>
+
+        <!-- Services -->
+        <menuitem id="menu_services_management" name="Services Management" parent="menu_barbershop_root" sequence="20"/>
+        <menuitem id="menu_services" name="Services" parent="menu_services_management" action="action_services" sequence="10"/>
+        <menuitem id="menu_specialization" name="Specializations" parent="menu_services_management" action="action_specialization" sequence="20"/>
+        <menuitem id="menu_specialization_category" name="Specialization Categories" parent="menu_services_management" action="barbershop.action_specialization_category" sequence="30"/>
+
+        <!-- Appointments -->
+        <menuitem id="menu_appointments_management" name="Appointments Management" parent="menu_barbershop_root" sequence="30"/>
+        <menuitem id="menu_appointments" name="Appointments" parent="menu_appointments_management" action="action_appointments" sequence="10"/>
+        <menuitem id="menu_reminders" name="Reminders" parent="menu_appointments_management" action="action_reminders" sequence="20"/>
+
+        <!-- Work Schedules -->
+        <menuitem id="menu_work_schedules_management" name="Work Schedules Management" parent="menu_barbershop_root" sequence="40"/>
+        <menuitem id="menu_work_schedules" name="Work Schedules" parent="menu_work_schedules_management" action="action_work_schedules" sequence="10"/>
+        <menuitem id="menu_holidays" name="Holidays" parent="menu_work_schedules_management" action="action_holidays" sequence="20"/>
+
+        <!-- Bonuses -->
+        <menuitem id="menu_bonuses_management" name="Bonuses Management" parent="menu_barbershop_root" sequence="50"/>
+        <menuitem id="menu_bonuses" name="Bonuses" parent="menu_bonuses_management" action="action_bonuses" sequence="10"/>
+        <menuitem id="menu_bonus_category" name="Bonus Categories" parent="menu_bonuses_management" action="action_bonus_categories" sequence="20"/>
     </data>
 </odoo>
