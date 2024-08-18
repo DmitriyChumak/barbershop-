@@ -38,7 +38,6 @@ class WorkSchedule(models.Model):
         comodel_name='barbershop.break',
         inverse_name='work_schedule_id',
         string='Breaks',
-        ondelete='cascade',
         help='Break periods during the work schedule.'
     )
     holiday_ids = fields.One2many(

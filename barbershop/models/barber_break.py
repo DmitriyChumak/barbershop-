@@ -22,7 +22,6 @@ class Break(models.Model):
         comodel_name='barbershop.work.schedule',
         string='Work Schedule',
         required=True,
-        ondelete='cascade',
         help='The work schedule associated with this break period.'
     )
     start_time = fields.Float(

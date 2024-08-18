@@ -1,0 +1,36 @@
+<odoo>
+            <!-- Form view for Barber Load Report Wizard -->
+    <record id="view_barber_load_report_wizard_form" model="ir.ui.view">
+        <field name="name">barbershop.barber_load_report_wizard.form</field>
+        <field name="model">barbershop.barber_load_report_wizard</field>
+        <field name="arch" type="xml">
+            <form string="Barber Load Report">
+                <group>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                </group>
+                <footer>
+                    <button string="Generate Report" type="object" name="generate_report" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action for Barber Load Report Wizard -->
+    <record id="action_generate_barber_load_report" model="ir.actions.server">
+        <field name="name">Generate Barber Load Report</field>
+        <field name="model_id" ref="barbershop.model_barbershop_appointment"/>
+        <field name="binding_model_id" ref="barbershop.model_barbershop_appointment"/>
+        <field name="state">code</field>
+        <field name="code">
+action = {
+    'type': 'ir.actions.act_window',
+    'name': 'Generate Barber Load Report',
+    'res_model': 'barbershop.barber_load_report_wizard',
+    'view_mode': 'form',
+    'target': 'new',
+}
+        </field>
+    </record>
+</odoo>

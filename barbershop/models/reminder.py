@@ -9,18 +9,15 @@ class Reminder(models.Model):
     customer_id = fields.Many2one(
         comodel_name='res.partner',
         string='Customer',
-        required=True,
         help="The customer for whom the reminder is set."
     )
     appointment_id = fields.Many2one(
         comodel_name='barbershop.appointment',
         string='Appointment',
-        required=True,
         help="The appointment associated with the reminder."
     )
     reminder_date = fields.Datetime(
         string='Reminder Date',
-        required=True,
         help="The date and time when the reminder is set."
     )
 

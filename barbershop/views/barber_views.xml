@@ -80,18 +80,5 @@
             <field name="domain">[('is_barber', '=', True)]</field>
             <field name="context">{'default_is_barber': 1}</field>
         </record>
-
-        <!-- Add report action to the employee form view -->
-<!--        <record id="hr_employee_form_view_inherit_report" model="ir.ui.view">-->
-<!--            <field name="name">hr.employee.form.report.barbershop</field>-->
-<!--            <field name="model">hr.employee</field>-->
-<!--            <field name="inherit_id" ref="hr.view_employee_form"/>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <xpath expr="//header" position="inside">-->
-<!--                    <button name="%(report_barber_load_action)d" string="Print Barber Load Report" type="action" class="oe_highlight"/>-->
-<!--                </xpath>-->
-<!--            </field>-->
-<!--        </record>-->
-
     </data>
 </odoo>

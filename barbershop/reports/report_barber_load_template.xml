@@ -1,28 +1,99 @@
 <odoo>
-    <!-- Report template -->
-    <template id="report_barber_load_template">
-        <t t-call="web.html_container">
-            <t t-foreach="docs" t-as="doc">
-                <t >
-                    <div class="page">
-<!--                        <h2>Barber Load Report</h2>-->
-<!--                        <p>Barber: <t t-esc="doc.id"/></p>-->
-<!--                        <p>Name: <t t-esc=""/>doc.is_barber</p>-->
-<!--                        <p>Number of Appointments: <t t-esc="doc.appointment_count"/></p>-->
+    <template id="report_barber_load">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <main>
+                    <h2 style="text-align:center; margin-bottom: 15px;">Barber Load Report</h2>
+
+                    <!-- Overall Summary -->
+                    <div style="page-break-after:always;">
+                        <h3 style="text-align:center; margin-bottom: 15px;">Overall Summary</h3>
+                        <table style="width: 100%; border: none; border-collapse: collapse; text-align: center;">
+                            <tr>
+                                <td style="width: 50%; vertical-align: top; padding-right: 10px; border: none;">
+                                    <table class="table table-sm" style="text-align: left; border: none;">
+                                        <tr>
+                                            <th style="border: none;">Total Scheduled:</th>
+                                            <td style="border: none;"><t t-esc="total_scheduled"/></td>
+                                        </tr>
+                                        <tr>
+                                            <th style="border: none;">Total Completed:</th>
+                                            <td style="border: none;"><t t-esc="total_completed"/></td>
+                                        </tr>
+                                        <tr>
+                                            <th style="border: none;">Total Cancelled:</th>
+                                            <td style="border: none;"><t t-esc="total_cancelled"/></td>
+                                        </tr>
+                                        <tr>
+                                            <th style="border: none;">Total Scheduled Revenue:</th>
+                                            <td style="border: none;">$<t t-esc="total_scheduled_revenue"/></td>
+                                        </tr>
+                                        <tr>
+                                            <th style="border: none;">Total Completed Revenue:</th>
+                                            <td style="border: none;">$<t t-esc="total_completed_revenue"/></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td style="width: 50%; vertical-align: top; border: none;">
+                                    <t t-if="total_chart_image">
+                                        <img t-att-src="'data:image/png;base64,' + total_chart_image" alt="Overall Chart" style="max-width: 70%; height: auto;"/>
+                                    </t>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
-                </t>
-            </t>
+
+                    <t t-foreach="grouped_appointments.items()" t-as="barber_data">
+                        <div class="barber-section" style="page-break-after:always;">
+                            <h3 style="text-align:center; margin-bottom: 15px;">Barber: <t t-esc="barber_data[0].name"/></h3>
+                            <table style="width: 100%; border: none; border-collapse: collapse; text-align: center;">
+                                <tr>
+                                    <td style="width: 50%; vertical-align: top; padding-right: 10px; border: none;">
+                                        <table class="table table-sm" style="text-align: left; border: none;">
+                                            <tr>
+                                                <th style="border: none;">Scheduled:</th>
+                                                <td style="border: none;"><t t-esc="barber_data[1]['scheduled_count']"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th style="border: none;">Completed:</th>
+                                                <td style="border: none;"><t t-esc="barber_data[1]['completed_count']"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th style="border: none;">Cancelled:</th>
+                                                <td style="border: none;"><t t-esc="barber_data[1]['canceled_count']"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th style="border: none;">Total Scheduled Revenue:</th>
+                                                <td style="border: none;">$<t t-esc="barber_data[1]['total_scheduled_revenue']"/></td>
+                                            </tr>
+                                            <tr>
+                                                <th style="border: none;">Total Completed Revenue:</th>
+                                                <td style="border: none;">$<t t-esc="barber_data[1]['total_completed_revenue']"/></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td style="width: 50%; vertical-align: top; border: none;">
+                                        <t t-if="barber_data[1]['chart_image']">
+                                            <img t-att-src="'data:image/png;base64,' + barber_data[1]['chart_image']" alt="Chart" style="max-width: 70%; height: auto;"/>
+                                        </t>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </t>
+                </main>
+            </div>
         </t>
     </template>
 
-    <!-- Report action -->
+<!--     Report action-->
     <record id="action_report_barber_load" model="ir.actions.report">
-        <field name="name">Barber Load Report</field>
-        <field name="model">report.barber.load</field>
+        <field name="name">Yearly Barber Load Report</field>
+        <field name="model">barbershop.appointment</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">barbershop.report_barber_load_template</field>
-        <field name="report_file">barbershop.report_barber_load_template</field>
-        <field name="binding_model_id" ref="hr.model_hr_employee"/>
+        <field name="report_name">barbershop.report_barber_load</field>
+        <field name="report_file">barbershop.report_barber_load</field>
+        <field name="binding_model_id" ref="barbershop.model_barbershop_appointment"/>
         <field name="binding_type">report</field>
     </record>
 </odoo>

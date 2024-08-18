@@ -52,17 +52,24 @@
                 <field name="employee_id"/>
                 <field name="service_id"/>
                 <field name="state"/>
+                <field name="date_time" string="Appointment Date"/>
+                <field name="service_cost" string="Service Cost"/>
                 <filter name="Scheduled" domain="[('state', '=', 'scheduled')]"/>
                 <filter name="Completed" domain="[('state', '=', 'completed')]"/>
                 <filter name="Cancelled" domain="[('state', '=', 'cancelled')]"/>
                 <group expand="0" string="Group By">
                     <filter name="Barber" context="{'group_by': 'employee_id'}"/>
                     <filter name="Service" context="{'group_by': 'service_id'}"/>
+                    <filter name="Date" context="{'group_by': 'date_time:day'}"/>
                 </group>
+                <searchpanel>
+                    <field name="employee_id" string="Barber"/>
+                </searchpanel>
             </search>
         </field>
     </record>
 
+     <!-- Pivot table -->
     <record id="view_appointment_pivot" model="ir.ui.view">
         <field name="name">barbershop.appointment.pivot</field>
         <field name="model">barbershop.appointment</field>
@@ -77,12 +84,29 @@
         </field>
     </record>
 
+<!--    Calendar view-->
+    <record id="view_appointment_calendar" model="ir.ui.view">
+        <field name="name">barbershop.appointment.calendar</field>
+        <field name="model">barbershop.appointment</field>
+        <field name="arch" type="xml">
+            <calendar string="Appointments" date_start="date_time" color="employee_id">
+                <field name="name"/>
+                <field name="service_id"/>
+                <field name="customer_id"/>
+                <field name="employee_id"/>
+                <field name="state"/>
+            </calendar>
+        </field>
+    </record>
+
     <!-- Action for Appointments -->
     <record id="action_appointments" model="ir.actions.act_window">
         <field name="name">Appointments</field>
         <field name="res_model">barbershop.appointment</field>
-        <field name="view_mode">tree,form,pivot</field>
-        <field name="context">{}</field>
+        <field name="view_mode">tree,form,calendar,pivot</field>
+        <field name="context">{
+            'search_default_Scheduled': True
+        }</field>
     </record>
 
 </odoo>

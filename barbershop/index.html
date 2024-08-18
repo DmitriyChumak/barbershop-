@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barber Shop Management Module</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        section {
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            color: #3e75be;
+        }
+        .feature, .usage, .dependency {
+            margin-bottom: 20px;
+            border-left: 4px solid rgba(4, 3, 43, 0.91);
+            padding-left: 10px;
+        }
+        .feature ul, .usage ul, .dependency ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        footer {
+            background-color: #4ab99c;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Barber Shop Management Module</h1>
+        <p>Comprehensive Management Solution for Your Barbershop</p>
+    </header>
+
+    <section>
+        <div class="container">
+            <h2>Overview</h2>
+            <p>The Barber Shop Management module for Odoo provides a comprehensive solution for managing all aspects of a barbershop. From scheduling appointments to managing services, barbers, and customer interactions, this module streamlines operations and improves efficiency.</p>
+
+            <h2>Features</h2>
+            <div class="feature">
+                <ul>
+                    <li><strong>Customer Management</strong>: Manage customer details and history.</li>
+                    <li><strong>Appointment Scheduling</strong>: Schedule appointments with barbers, assign services, and track appointment status.</li>
+                    <li><strong>Barber Management</strong>: Handle barber details, specialization, work schedules, and holidays.</li>
+                    <li><strong>Services Management</strong>: Define and manage different services provided by the barbershop.</li>
+                    <li><strong>Bonuses</strong>: Manage barber bonuses based on performance.</li>
+                    <li><strong>Reminders</strong>: Set reminders for upcoming appointments.</li>
+                    <li><strong>Reporting</strong>: Generate detailed reports on barber workloads, revenue, and services provided.</li>
+                    <li><strong>Email Notifications</strong>: Automatically send email reminders to customers and barbers for upcoming appointments.</li>
+                    <li><strong>Calendar Integration</strong>: Integrates with the Odoo calendar for appointment management.</li>
+                </ul>
+            </div>
+
+            <h2>Installation</h2>
+            <div class="dependency">
+                <ol>
+                    <li>Ensure you have a working Odoo instance with the necessary dependencies installed.</li>
+                    <li>Clone or download the <strong>Barber Shop</strong> module into your Odoo <code>addons</code> directory.</li>
+                    <li>Navigate to your Odoo instance and update the module list.</li>
+                    <li>Install the "Barber Shop" module via the Apps menu.</li>
+                </ol>
+            </div>
+
+            <h2>Dependencies</h2>
+            <div class="dependency">
+                <p>This module depends on the following Odoo core modules:</p>
+                <ul>
+                    <li><code>base</code></li>
+                    <li><code>mail</code></li>
+                    <li><code>contacts</code></li>
+                    <li><code>hr</code></li>
+                    <li><code>calendar</code></li>
+                </ul>
+                <p>External Python dependencies:</p>
+                <ul>
+                    <li><code>matplotlib</code>: Required for generating graphical reports.</li>
+                </ul>
+            </div>
+
+            <h2>Configuration</h2>
+            <p>The module includes specific security settings for managing access to different parts of the system. Ensure that users are assigned to the appropriate groups to gain access to the necessary features.</p>
+
+            <h2>Usage</h2>
+            <div class="usage">
+                <ul>
+                    <li>Manage customer records through the "Customers" menu.</li>
+                    <li>Schedule and manage appointments through the "Appointments" menu.</li>
+                    <li>Manage barbers, their work schedules, specializations, and holidays through the "Barbers" menu.</li>
+                    <li>Generate and view detailed reports via the "Reporting" menu.</li>
+                    <li>Set up automatic reminders for appointments to keep both barbers and customers informed.</li>
+                </ul>
+            </div>
+
+            <h2>Demo Data</h2>
+            <p>For demonstration purposes, the module includes demo data that can be used to test and explore its features.</p>
+
+            <h2>License</h2>
+            <p>This module is licensed under the LGPL-3.0 License. See the LICENSE file for more details.</p>
+
+            <h2>Author</h2>
+            <p><strong>Dmitriy Chumak</strong> - <a href="http://www.barbershop.com/">Barber Shop</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>For support, please contact us at <a href="mailto:support@barbershop.com">support@barbershop.com</a> or visit our <a href="http://www.barbershop.com/">website</a>.</p>
+    </footer>
+</body>
+</html>
