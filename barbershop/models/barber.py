@@ -86,14 +86,19 @@ class Barber(models.Model):
             ('state', '=', 'scheduled')
         ])
 
+        day_record = self.env['barbershop.days.of.week'].search([
+            ('sequence', '=', date.isoweekday())
+        ], limit=1)
+
         work_schedules = self.env['barbershop.work.schedule'].search([
             ('employee_id', '=', self.id),
-            ('day_of_week', '=', date.weekday())
+            ('days_of_week', 'in', day_record.ids)
         ])
 
         holidays = self.env['barbershop.holiday'].search([
             ('employee_id', '=', self.id),
-            ('date', '=', date)
+            ('start_date', '<=', date),
+            ('end_date', '>=', date)
         ])
 
         if holidays:
@@ -101,8 +106,8 @@ class Barber(models.Model):
 
         slots = []
         for schedule in work_schedules:
-            current_time = datetime.combine(date, datetime.min.time()) + timedelta(hours=schedule.start_time)
-            end_time = datetime.combine(date, datetime.min.time()) + timedelta(hours=schedule.end_time)
+            current_time = datetime.combine(date, datetime.min.time()) + timedelta(hours=schedule.start_time_work)
+            end_time = datetime.combine(date, datetime.min.time()) + timedelta(hours=schedule.end_time_work)
             for break_period in schedule.break_ids:
                 break_start = datetime.combine(date, datetime.min.time()) + timedelta(hours=break_period.start_time)
                 break_end = datetime.combine(date, datetime.min.time()) + timedelta(hours=break_period.end_time)
@@ -123,11 +128,11 @@ class Barber(models.Model):
         """
         for record in self:
             for schedule in record.work_schedule_ids:
-                if schedule.start_time >= schedule.end_time:
+                if schedule.start_time_work >= schedule.end_time_work:
                     raise ValidationError("The start time must be before the end time in work schedules.")
                 for break_period in schedule.break_ids:
                     if break_period.start_time >= break_period.end_time:
                         raise ValidationError("The start time must be before the end time in break periods.")
-                    if not (schedule.start_time <= break_period.start_time < schedule.end_time and
-                            schedule.start_time < break_period.end_time <= schedule.end_time):
+                    if not (schedule.start_time_work <= break_period.start_time < schedule.end_time_work and
+                            schedule.start_time_work < break_period.end_time <= schedule.end_time_work):
                         raise ValidationError("Break periods must be within the work schedule time range.")
