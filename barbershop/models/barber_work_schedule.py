@@ -42,22 +42,26 @@ class WorkSchedule(models.Model):
     )
     holiday_ids = fields.One2many(
         comodel_name='barbershop.holiday',
+        # inverse_name='work_schedule_id', # This was in barber_holiday.py, not needed for computed field here.
         string='Holidays',
         compute='_compute_holiday_ids',
-        help='Holidays associated with this work schedule.'
+        help="Holidays associated with the barber of this work schedule (shown for informational purposes)."
     )
-    descriptions = fields.Html(
-        string='Description'
+    description = fields.Html( # Renamed from descriptions
+        string='Description',
+        help="Optional description for the work schedule."
     )
 
-    @api.depends('employee_id', 'days_of_week')
+    @api.depends('employee_id.name', 'days_of_week.name', 'start_time_work', 'end_time_work')
     def _compute_display_name(self):
         """
         Compute the display name for the work schedule.
         """
         for record in self:
-            days = ', '.join(record.days_of_week.mapped('name'))
-            record.display_name = f"{record.employee_id.name} - {days}"
+            days_str = ', '.join(record.days_of_week.mapped('name'))
+            employee_name = record.employee_id.name if record.employee_id else 'N/A'
+            record.display_name = (f"{employee_name} ({days_str}): "
+                                   f"{record.start_time_work:.2f} - {record.end_time_work:.2f}")
 
     @api.constrains('start_time_work', 'end_time_work')
     def _check_times(self):

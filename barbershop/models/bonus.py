@@ -13,7 +13,8 @@ class Bonus(models.Model):
     display_name = fields.Char(
         string='Display Name',
         compute='_compute_display_name',
-        store=True
+        store=True,
+        help="A concise display name for the bonus record."
     )
     employee_id = fields.Many2one(
         comodel_name='hr.employee',
@@ -45,15 +46,15 @@ class Bonus(models.Model):
         help='A detailed description of the bonus.'
     )
 
-    @api.depends('employee_id', 'category_id')
+    @api.depends('employee_id.name', 'category_id.display_name')
     def _compute_display_name(self):
         """
         Compute the display name for the bonus.
         """
         for bonus in self:
-            barber_name = bonus.employee_id.name or "Unknown Barber"
-            category_name = bonus.category_id.display_name or "Unknown Category"
-            bonus.display_name = f"{barber_name} - {category_name}"
+            barber_name = bonus.employee_id.name if bonus.employee_id else "N/A"
+            category_name = bonus.category_id.display_name if bonus.category_id else "N/A"
+            bonus.display_name = f"Bonus for {barber_name} - Category: {category_name} ({bonus.date.strftime('%Y-%m-%d') if bonus.date else 'Undated'})"
 
     @api.constrains('amount')
     def _check_amount(self):
@@ -128,15 +129,28 @@ class Bonus(models.Model):
 
         # Create bonuses for each employee
         for employee_id, amount in employee_bonus.items():
+            # Note: Bonuses created here will not have a specific category or description
+            # unless create_bonus is modified or default values are set in the model.
             self.create_bonus(employee_id, amount, last_day_of_month)
 
         # Send notifications after calculating bonuses
-        self.send_bonus_notifications()
+        # TODO: Consider refining how newly created bonuses are passed to send_bonus_notifications.
+        # If this method is called on self.env['barbershop.bonus'], 'self' here might be empty
+        # or refer to all bonuses, not just newly created ones.
+        self.search([]).send_bonus_notifications() # Example: send for all, or pass specific IDs.
 
     def send_bonus_notifications(self):
         """
         Send notifications to employees about their bonuses.
+        Assumes 'self' contains the bonus records for which to send notifications.
         """
+        # This method is called from calculate_monthly_bonus.
+        # If calculate_monthly_bonus is a cron, 'self' here might be an empty recordset
+        # if called as self.env['barbershop.bonus'].calculate_monthly_bonus().
+        # It should ideally operate on specific bonus record(s).
         for bonus in self:
-            template = self.env.ref('barbershop.bonus_notification_template')
-            self.env['mail.template'].browse(template.id).send_mail(bonus.id, force_send=True)
+            if not bonus.employee_id.user_id: # Ensure barber has a linked user for notifications
+                continue # Or log a warning
+            template = self.env.ref('barbershop.bonus_notification_template', raise_if_not_found=False)
+            if template:
+                self.env['mail.template'].browse(template.id).send_mail(bonus.id, force_send=True)

@@ -6,22 +6,26 @@ class Customer(models.Model):
 
     is_barbershop_customer = fields.Boolean(
         string='Barbershop Customer',
-        default=True
+        default=True,
+        help="Indicates if this partner is a customer of the barbershop."
     )
     appointment_ids = fields.One2many(
         comodel_name='barbershop.appointment',
         inverse_name='customer_id',
-        string='Appointments'
+        string='Appointments',
+        help="List of appointments for this customer."
     )
     last_visit_date = fields.Date(
         string='Last Visit Date',
         compute='_compute_last_visit_date',
-        store=True
+        store=True,
+        help="Date of the customer's last completed appointment."
     )
     total_spent = fields.Float(
         string='Total Spent',
         compute='_compute_total_spent',
-        store=True
+        store=True,
+        help="Total amount spent by this customer on completed appointments."
     )
 
     @api.depends('appointment_ids.state', 'appointment_ids.date_time')

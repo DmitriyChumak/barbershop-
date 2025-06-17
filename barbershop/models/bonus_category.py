@@ -54,20 +54,3 @@ class BonusCategory(models.Model):
         Deactivate the category.
         """
         self.write({'active': False})
-
-    @api.model
-    def create(self, vals):
-        """
-        Override create method to add custom logic.
-        """
-        if 'name' in vals and len(vals['name']) < 3:
-            raise ValidationError("The category name must be at least 3 characters long.")
-        return super(BonusCategory, self).create(vals)
-
-    def write(self, vals):
-        """
-        Override write method to add custom logic.
-        """
-        if 'name' in vals and len(vals['name']) < 3:
-            raise ValidationError("The category name must be at least 3 characters long.")
-        return super(BonusCategory, self).write(vals)

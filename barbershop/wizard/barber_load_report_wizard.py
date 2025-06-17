@@ -5,8 +5,16 @@ class BarberLoadReportWizard(models.TransientModel):
     _name = 'barbershop.barber_load_report_wizard'
     _description = 'Barber Load Report Wizard'
 
-    date_start = fields.Date(string="Start Date", required=True)
-    date_end = fields.Date(string="End Date", required=True)
+    date_start = fields.Date(
+        string="Start Date",
+        required=True,
+        help="The starting date for the report period."
+    )
+    date_end = fields.Date(
+        string="End Date",
+        required=True,
+        help="The ending date for the report period."
+    )
 
     def generate_report(self):
         data = {

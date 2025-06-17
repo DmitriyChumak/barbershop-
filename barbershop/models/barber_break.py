@@ -41,17 +41,18 @@ class Break(models.Model):
         help='Days of the week for the break period.'
     )
     description = fields.Html(
-        string='Description'
+        string='Description',
+        help="Optional description for the break period (e.g., Lunch Break)."
     )
 
-    @api.depends('start_time', 'end_time', 'days_of_week')
+    @api.depends('start_time', 'end_time', 'days_of_week.name')
     def _compute_display_name(self):
         """
         Compute the display name for the break period.
         """
         for record in self:
-            days = ', '.join(record.days_of_week.mapped('name'))
-            record.display_name = f"Break: {record.start_time} - {record.end_time} on {days}"
+            days_str = ', '.join(record.days_of_week.mapped('name'))
+            record.display_name = f"Break: {record.start_time:.2f} - {record.end_time:.2f} on {days_str}"
 
     @api.constrains('start_time', 'end_time')
     def _check_times(self):

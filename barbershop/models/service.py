@@ -60,6 +60,12 @@ class Service(models.Model):
         ('positive_price', 'CHECK(price > 0)', 'The price must be greater than zero.')
     ]
 
+    @api.constrains('duration')
+    def _check_duration(self):
+        for service in self:
+            if service.duration <= 0:
+                raise ValidationError("Service duration must be a positive number of hours.")
+
     @api.constrains('specialization_ids')
     def _check_specializations(self):
         """

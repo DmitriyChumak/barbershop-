@@ -59,7 +59,8 @@ class Specialization(models.Model):
         help='The category to which this specialization belongs.'
     )
     description = fields.Html(
-        string='Description'
+        string='Description',
+        help="A detailed description of the specialization."
     )
 
     _sql_constraints = [

@@ -18,21 +18,21 @@
         'security/security.xml',
         'security/ir.model.access.csv',
 
+        'data/config_params.xml',
         'views/customer_views.xml',
         'views/barber_views.xml',
-        'views/bonus_views.xml',
-        'views/service_views.xml',
-        'views/reminder_views.xml',
-        'views/appointment_views.xml',
-        'views/specialization_views.xml',
-        'views/bonus_category_view.xml',
+        'views/barber_break_views.xml', # Added
         'views/barber_holiday_views.xml',
         'views/barber_work_schedule_views.xml',
-        'views/specialization_category.xml',
+        'views/bonus_views.xml',
+        'views/bonus_category_view.xml',
+        'views/service_views.xml',
+        'views/appointment_views.xml',
+        'views/specialization_views.xml',
+        'views/specialization_category.xml', # Removed reminder_views.xml
         'views/menu.xml',
 
         'data/bonus_mail_template_data.xml',
-        'data/reminder_email_template_data.xml',
         'data/days_of_week.xml',
 
         'reports/report_barber_load_template.xml',

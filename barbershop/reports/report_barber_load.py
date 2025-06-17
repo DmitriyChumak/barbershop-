@@ -29,6 +29,8 @@ class AppointmentReport(models.AbstractModel):
     @api.model
     def _get_report_values(self, docids, data=None):
         today = date.today()
+        # Default to the entire current year if start/end dates are not provided by the wizard.
+        # Assumes 'data' contains 'date_start' and 'date_end' keys from the wizard.
         date_start = data.get('date_start') or date(today.year, 1, 1)
         date_end = data.get('date_end') or date(today.year, 12, 31)
 

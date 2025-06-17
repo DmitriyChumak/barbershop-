@@ -48,9 +48,17 @@ The module provides the following reports:
 
 ### Email Templates
 
-Custom email templates are provided for sending reminders and notifications:
+Custom email templates are provided for sending notifications such as bonus alerts. Appointment reminders for customers and barbers leverage Odoo's standard calendar alarm system, which uses system-configurable email templates.
 - **Bonus Notification**: Notify barbers about their bonuses.
-- **Appointment Reminder**: Remind customers and barbers of upcoming appointments.
+
+### Reminders Configuration
+Reminder Lead Times: The lead time for appointment reminders can be configured via System Parameters (found under Technical > Parameters > System Parameters):
+ - `barbershop.reminder_barber_minutes`: Lead time in minutes for barber notifications (default: 15).
+ - `barbershop.reminder_customer_minutes`: Lead time in minutes for customer email reminders (default: 120).
+
+### Availability Configuration
+Availability Slot Interval: The time interval used for displaying barber availability slots (e.g., in 15-minute blocks) can be configured via System Parameters:
+ - `barbershop.slot_interval_minutes`: Interval in minutes (default: 15).
 
 ## Usage
 

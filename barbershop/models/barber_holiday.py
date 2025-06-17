@@ -49,13 +49,17 @@ class Holiday(models.Model):
         ('unique_holiday_barber_date', 'unique(employee_id, start_date, end_date)', 'A barber cannot have overlapping holidays.')
     ]
 
-    @api.depends('employee_id', 'start_date', 'end_date')
+    @api.depends('employee_id.name', 'start_date', 'end_date')
     def _compute_display_name(self):
         """
         Compute the display name for the holiday.
         """
         for record in self:
-            record.display_name = f"{record.employee_id.name} - {record.start_date} to {record.end_date}"
+            if record.employee_id and record.start_date and record.end_date:
+                record.display_name = f"{record.employee_id.name} - {record.start_date.strftime('%Y-%m-%d')} to {record.end_date.strftime('%Y-%m-%d')}"
+            else:
+                record.display_name = "Holiday"
+
 
     @api.constrains('start_date', 'end_date')
     def _check_holiday_date(self):
